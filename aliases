@@ -1,0 +1,13 @@
+# Unix
+alias ll='ls -lah'
+alias ln='ln -v'
+alias mkdir='mkdir -p'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Git
+alias g='git'
+
+# Ruby
+alias b='bundle'
+alias z='zeus'

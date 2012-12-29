@@ -1,0 +1,54 @@
+[alias]
+  st = status --short --branch
+  co = checkout
+  br = branch
+  ci = commit -v
+  lg = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%ad%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+  ap = add --patch
+
+  unmerged  = !git ls-files --unmerged | cut -f2 | sort -u
+  conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs grep -El '<<<<<<<|=======|>>>>>>>'
+
+  # Push to current remote branch
+  pc        = !git rev-parse --abbrev-ref HEAD | xargs git push origin
+
+  # Stats by commit author
+  stats     = !git shortlog --summary | sort --reverse --numeric-sort
+
+  # List of aliases
+  aliases   = !git config -l | grep alias | cut -c 7-
+
+  rebase-origin = !git fetch origin && git rebase origin/master
+
+[color]
+  diff   = true
+  grep   = true
+  status = true
+  ui     = true
+
+  [color "branch"]
+    current = yellow reverse
+    local   = yellow
+    remote  = green
+
+  [color "status"]
+    added      = yellow
+    changed    = green
+    untracked  = cyan
+
+  [color "diff"]
+    meta       = magenta
+    frag       = magenta bold
+    old        = red bold
+    new        = blue bold
+    whitespace = red reverse
+
+[url "git@github.com:"]
+  insteadOf = gh:
+
+[user]
+  name = Aleksey Demidov
+  email = aleksey.dem@gmail.com
+
+[github]
+  user = ademidov
