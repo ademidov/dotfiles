@@ -1,0 +1,13 @@
+--smart-case
+--sort-files
+--color
+--follow
+--group
+
+--type-add=js=.coffee
+--type-add=html=.html.erb,.html.haml
+--type-add=css=.sass,.scss
+
+--ignore-dir=log
+--ignore-dir=tags
+--ignore-dir=tmp
