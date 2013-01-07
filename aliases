@@ -11,3 +11,5 @@ alias g='git'
 # Ruby
 alias b='bundle'
 alias z='zeus'
+
+alias tmux="tmux -2"
