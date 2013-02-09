@@ -1,0 +1,16 @@
+# vim-like menu bindings:
+menu_parent h Left
+menu_child  l Right
+menu_down   j Down
+menu_up     k Up
+menu_select space Return
+
+# image navigation
+next_img l Right
+prev_img h Left
+
+# and image movement
+scroll_up    J C-Up
+scroll_down  K C-Down
+scroll_left  H C-Left
+scroll_right L C-Right
