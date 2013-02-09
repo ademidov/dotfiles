@@ -20,6 +20,17 @@
 
   rebase-origin = !git fetch origin && git rebase origin/master
 
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+
+[user]
+	name = Aleksey Demidov
+	email = aleksey.dem@gmail.com
+
+[github]
+	user = ademidov
+
 [color]
   diff   = true
   grep   = true
@@ -45,10 +56,3 @@
 
 [url "git@github.com:"]
   insteadOf = gh:
-
-[user]
-  name = Aleksey Demidov
-  email = aleksey.dem@gmail.com
-
-[github]
-  user = ademidov
