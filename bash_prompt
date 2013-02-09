@@ -1,0 +1,10 @@
+default_username='aleksey'
+
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+function usernamehost() {
+  if [ $USER != $default_username ]; then echo "\u@\h:"; fi
+}
+PS1="\${debian_chroot:+($debian_chroot)}\$(usernamehost)\w\$ "

@@ -1,0 +1,20 @@
+export EDITOR="vim"
+# export TERM="gnome-256color"
+export XDG_CONFIG_HOME="/home/aleksey/.config";
+
+# Larger bash history
+export HISTSIZE=1024
+export HISTFILESIZE=$HISTSIZE
+# Don't put duplicate lines or lines starting with space in the history
+export HISTCONTROL=ignoreboth
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd;exit:* --help"
+
+export PATH="$HOME/scripts:$PATH"
+
+# Ruby GC tuning
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=100000000
+export RUBY_HEAP_FREE_MIN=500000
