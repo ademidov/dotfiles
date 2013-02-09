@@ -9,12 +9,12 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 IRB.conf[:PROMPT_MODE] = :DEFAULT
 IRB.conf[:AUTO_INDENT] = true
 
-def ccopy(str)
+def xcopy(str)
   IO.popen('xclip -selection clipboard', 'w') { |f| f << str.to_s }
   str
 end
 
-def cpaste
+def xpaste
   `xclip -selection clipboard -o`
 end
 
