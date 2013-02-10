@@ -1,0 +1,1 @@
+--skip-test-unit --old-style-hash --database postgresql
