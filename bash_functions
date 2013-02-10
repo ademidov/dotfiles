@@ -17,3 +17,8 @@ function _c() {
   return 0
 }
 complete -F _c c
+
+function ff() {
+  field="\$$1"
+  awk "{ print $field }"
+}
