@@ -23,6 +23,14 @@ function ff() {
   awk "{ print $field }"
 }
 
+function s() {
+  if [ -f zeus.json ]; then
+    zeus rspec "$@"
+  else
+    bundle exec rspec "$@"
+  fi
+}
+
 # Rake completion
 # Stolen from https://github.com/ai/rake-completion
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
