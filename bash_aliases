@@ -2,9 +2,12 @@
 alias ll='ls -lah'
 alias ln='ln -v'
 alias mkdir='mkdir -p'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+# alias pbcopy='xclip -selection clipboard'
+# alias pbpaste='xclip -selection clipboard -o'
 alias tmux="tmux -2"
+
+alias :e="${EDITOR}"
+alias :r="cat"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

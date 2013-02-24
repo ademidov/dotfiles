@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# encoding: utf-8
 
 require 'irb/completion'
 require 'irb/ext/save-history'

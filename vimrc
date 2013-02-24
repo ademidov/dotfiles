@@ -49,7 +49,7 @@ Bundle 'tpope/vim-pastie'
 
 Bundle 'vim-scripts/CSApprox'
 Bundle 'twilight'
-Bundle 'wombat256.vim'
+Bundle 'w0ng/vim-hybrid'
 
 " Great plugin, but i dont use it. Maybe later
 " Bundle 'Lokaltog/vim-easymotion'
@@ -73,4 +73,4 @@ runtime settings/mappings.vim
 
 " Apply colorscheme
 set background=dark
-colorscheme twilight
+colorscheme hybrid

@@ -10,7 +10,7 @@ set noswapfile
 " ==================================
 
 " A lot of colors in terminal
-set term=xterm-256color
+" set term=xterm-256color
 " set term=gnome-256color
 set t_Co=256
 
@@ -118,3 +118,5 @@ set undofile
 
 " Ack to grep
 set grepprg=ack
+
+set clipboard=unnamed
