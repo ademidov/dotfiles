@@ -4,7 +4,14 @@
   br = branch
   ci = commit -v
   lg = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%ad%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+  l = !git lg -n 20
   ap = add --patch
+
+  # Diff from latest commit
+  d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
+
+  # Copy&paste helper
+  git = !git
 
   unmerged  = !git ls-files --unmerged | cut -f2 | sort -u
   conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs grep -El '<<<<<<<|=======|>>>>>>>'
