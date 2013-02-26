@@ -25,6 +25,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  alias ls='command ls -G';
+fi;
+
 # Git
 alias g='git'
 
