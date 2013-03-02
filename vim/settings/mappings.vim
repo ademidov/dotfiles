@@ -58,6 +58,8 @@ map <leader>ew :edit %%
 map <leader>ev :vsplit %%
 map <leader>es :split %%
 
+map <leader>f :Ack<space>
+
 " Execute q macro
 nmap Q @q
 
