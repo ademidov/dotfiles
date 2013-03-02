@@ -52,8 +52,11 @@ nnoremap <leader><leader> <c-^>
 " Close buffer
 nmap <leader>d :bd<CR>
 
-" Edit file in current dir
-map <leader>e :edit <C-R>=expand('%:h').'/'<CR>
+" Edit file in current dir ([e]dit in [w]indow, [s]plit, [v]split)
+cnoremap %% <C-R>=expand('%:p:h').'/'<cr>
+map <leader>ew :edit %%
+map <leader>ev :vsplit %%
+map <leader>es :split %%
 
 " Execute q macro
 nmap Q @q
