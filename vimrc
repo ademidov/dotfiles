@@ -54,9 +54,6 @@ Bundle 'w0ng/vim-hybrid'
 " Great plugin, but i dont use it. Maybe later
 " Bundle 'Lokaltog/vim-easymotion'
 
-" Contains some nice colors, want them in my colorscheme
-" Bundle 'w0ng/vim-hybrid'
-
 filetype plugin indent on " required!
 " ===================================================
 
