@@ -1,0 +1,91 @@
+#!/bin/bash
+
+sudo -v
+
+sudo scutil --set ComputerName "laptop-mbp"
+sudo scutil --set HostName "laptop-mbp"
+sudo scutil --set LocalHostName "laptop-mbp"
+
+##########################
+#      General UI        #
+##########################
+
+# Disable 'application was crashed' dialog
+defaults write com.apple.CrashReporter DialogType none
+
+# Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Fast key-repeat
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean true
+
+# Full path at Finder title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+## Animations
+
+# opening and closing windows and popovers
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+
+# smooth scrolling
+defaults write -g NSScrollAnimationEnabled -bool false
+
+# elastic scroll
+defaults write -g NSScrollViewRubberbanding -bool false
+
+# showing sheets, resizing preference windows, zooming windows
+defaults write -g NSWindowResizeTime -float 0.001
+
+# opening and closing Quick Look windows
+defaults write -g QLPanelAnimationDuration -float 0
+
+# resizing windows before and after showing the version browser
+defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
+
+# showing the toolbar (and menu bar) in full screen
+defaults write -g NSToolbarFullScreenAnimationDuration -float 0
+
+# scrolling column views
+defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0
+
+# showing the Dock
+defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-delay -float 0
+
+# showing and hiding Mission Control
+# float 0.1 ?
+defaults write com.apple.dock expose-animation-duration -int 0
+
+# showing and hiding Launchpad
+defaults write com.apple.dock springboard-show-duration -float 0
+defaults write com.apple.dock springboard-hide-duration -float 0
+
+# changing pages in Launchpad
+defaults write com.apple.dock springboard-page-duration -float 0
+
+# at least AnimateInfoPanes and expanding sections in information panels
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+# workspaces change
+defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES
+
+##############################
+# Kill affected applications #
+##############################
+
+for app in "Dashboard" "Dock" "Finder" "SystemUIServer"; do
+  killall "$app" > /dev/null 2>&1
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
