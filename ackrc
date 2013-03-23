@@ -5,7 +5,7 @@
 --group
 
 --type-add=js=.coffee
---type-add=html=.html.erb,.html.haml
+--type-add=html=.html.erb,.html.haml,.hamlc
 --type-add=css=.sass,.scss
 
 --ignore-dir=log

@@ -58,7 +58,10 @@ map <leader>ew :edit %%
 map <leader>ev :vsplit %%
 map <leader>es :split %%
 
-map <leader>f :Ack<space>
+" Prompt for ack search
+nnoremap <leader>f :Ack!<space>"<left>"
+" Search for word under cursor
+nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
 
 " Execute q macro
 nmap Q @q
