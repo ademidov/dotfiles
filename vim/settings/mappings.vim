@@ -70,6 +70,9 @@ nnoremap <leader>f :Ack!<space>"<left>"
 " Search for word under cursor
 nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
 
+" Insert =>
+imap <buffer> <C-l> <space>=><space>
+
 " Execute q macro
 nmap Q @q
 
@@ -93,11 +96,15 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" H to start of line, L to end of line
+noremap H ^
+noremap L $
+
 " windows movements
-nmap <C-j> <C-W>j
-nmap <C-k> <C-W>k
-nmap <C-h> <C-W>h
-nmap <C-l> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " ruby evalution
 nmap <buffer> <F6> <Plug>(xmpfilter-mark)
