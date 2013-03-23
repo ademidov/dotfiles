@@ -22,6 +22,7 @@ let g:ackprg='ack -H --nocolor --nogroup --column --smart-case --sort-files'
 
 " vimux
 let g:VimuxHeight = '30'
+let g:VimuxOrientation = 'h'
 
 " vim-turbux
 let g:turbux_command_prefix = 'zeus' " Use zeus to run specs
