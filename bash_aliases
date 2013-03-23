@@ -6,10 +6,6 @@ alias mkdir='mkdir -p'
 # alias pbpaste='xclip -selection clipboard -o'
 alias tmux="tmux -2"
 
-alias cp='cp -i';
-alias mv='mv -i';
-alias rm='rm -i';
-
 alias :e="${EDITOR}"
 alias :r="cat"
 

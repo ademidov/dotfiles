@@ -15,6 +15,7 @@ fi
 #      source $HOME/.tmuxinator/scripts/completion
 # fi
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+[[ -s $HOME/.git-completion.bash ]] && source $HOME/.git-completion.bash
 
 # append to the history file, don't overwrite it
 shopt -s histappend
