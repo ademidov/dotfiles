@@ -17,11 +17,11 @@ map <leader>re :Rextract<space>
 " Highlight current word without moving the cursor
 nmap <silent> <leader>h :setl hls<CR>:let @/="\\<<C-r><C-w>\\>"<CR>
 
-" Save current buffer, trim spaces and restore cursor position
-nmap <leader>w ma:w<bar>call utils#trimSpaces()<CR>`a
+" Trim spaces and save current buffer
+map <silent> <leader>w :call utils#trimSpaces()<CR>:w!<CR>
 
 " Save current buffer, trim spaces and exit
-nmap <leader>q <leader>w :wq<CR>
+map <leader>q <leader>w :q!<CR>
 
 " Toggle nerdtree
 nmap <silent> <leader>p :NERDTreeToggle<CR>
