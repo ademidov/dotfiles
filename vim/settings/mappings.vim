@@ -4,8 +4,15 @@ nmap <silent> <leader>n :nohlsearch<CR>
 " Search and replace word under cursor
 nmap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
-" Alternate Rails.vim
-nmap <leader>a :A<CR>
+" Rails.vim alternate and related
+map <leader>ra :A<CR>
+map <leader>rr :R<CR>
+" Prompt for jump to migration (then <cr> for last migration, 0<cr> for seeds)
+nmap <leader>rm :Rmigration<space>
+" Prompt for rails generate
+nmap <leader>rg :Rgenerate<space>
+" Prompt for rails extract (partial, concern, helper)
+map <leader>re :Rextract<space>
 
 " Highlight current word without moving the cursor
 nmap <silent> <leader>h :setl hls<CR>:let @/="\\<<C-r><C-w>\\>"<CR>
