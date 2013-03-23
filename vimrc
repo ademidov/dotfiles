@@ -60,13 +60,9 @@ filetype plugin indent on " required!
 " Enable syntax higlighter
 syntax on
 
-" Load settings
 runtime macros/matchit.vim
-runtime settings/options.vim
-runtime settings/plugins.vim
-runtime settings/commands.vim
-runtime settings/autocommands.vim
-runtime settings/mappings.vim
+" Load all custom config files from .vim/config
+runtime! config/**/*
 
 " Apply colorscheme
 set background=dark

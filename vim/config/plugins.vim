@@ -28,7 +28,8 @@ let g:VimuxOrientation = 'h'
 let g:turbux_command_prefix = 'zeus' " Use zeus to run specs
 
 " AutoClose
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
+let g:AutoCloseExpandEnterOn = ""
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
 " Tagbar
 let g:tagbar_compact = 1
