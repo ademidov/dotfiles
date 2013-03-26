@@ -70,6 +70,9 @@ nnoremap <leader>f :Ack!<space>"<left>"
 " Search for word under cursor
 nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
 
+" Toggle gundo
+map <Leader>u :GundoToggle<CR>
+
 " Insert =>
 imap <buffer> <C-l> <space>=><space>
 

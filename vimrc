@@ -33,6 +33,7 @@ Bundle 'Townk/vim-autoclose'
 
 " Bundle 'vim-scripts/AutoComplPop'
 Bundle 'majutsushi/tagbar'
+Bundle 'sjl/gundo.vim'
 
 Bundle 'tpope/vim-rails'
 Bundle 'jgdavey/vim-turbux'
