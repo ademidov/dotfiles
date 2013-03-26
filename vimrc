@@ -38,6 +38,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'jgdavey/vim-turbux'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'bootleq/vim-textobj-rubysymbol'
 Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'tpope/vim-endwise'
 
