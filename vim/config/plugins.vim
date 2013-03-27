@@ -4,6 +4,7 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " let g:ctrlp_cmd = 'CtrlPMixed' " MRU+buffers+files
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_mruf_relative = 1 " Show mru files only in the working directory
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 " vim-rootfinder
 " let g:rootfinder_code_dirs = [$HOME.'/projects', $HOME.'/.vim']
