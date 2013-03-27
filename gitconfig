@@ -64,12 +64,17 @@
   # Show commits on merge
   log = true
 
+[diff]
+  # Use (i)ndex, (w)ork tree, (c)ommit and (o)bject
+  # instead of a/b/c/d as prefixes for patches
+  mnemonicprefix = true
+
 [user]
-	name = Aleksey Demidov
-	email = aleksey.dem@gmail.com
+  name = Aleksey Demidov
+  email = aleksey.dem@gmail.com
 
 [github]
-	user = ademidov
+  user = ademidov
 
 [color]
   diff   = true
