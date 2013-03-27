@@ -1,23 +1,50 @@
 [alias]
+  # status
   st = status --short --branch
-  co = checkout
-  br = branch
-  ci = commit -v
-  lg = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%ad%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
-  l = !git lg -n 20
+
+  # add
   ap = add --patch
 
-  # Diff from latest commit
+  # commit
+  ci = commit -v
+  amend    = commit -v --amend
+
+  # branch
+  b = branch
+  br = branch
+
+  # diff
+  # ustaged
   d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
+  # staged
+  dc = !"git d --cached"
 
-  # Copy&paste helper
-  git = !git
+  # log
+  lg = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%ad%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+  l = !git lg -n 20
 
+  # checkout
+  co = checkout
+  nb = checkout -b # [n]ew[b]ranch
+
+  # cherry-pick
+  cp = cherry-pick -x
+
+  # rebase
+  rc = rebase --continue
+  rs = rebase --skip
+  rebase-origin = !git fetch origin && git rebase origin/master
+
+  # reset
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+
+  # push
+  pc        = !git rev-parse --abbrev-ref HEAD | xargs git push origin
+
+  # merge
   unmerged  = !git ls-files --unmerged | cut -f2 | sort -u
   conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs grep -El '<<<<<<<|=======|>>>>>>>'
-
-  # Push to current remote branch
-  pc        = !git rev-parse --abbrev-ref HEAD | xargs git push origin
 
   # Stats by commit author
   stats     = !git shortlog --summary | sort --reverse --numeric-sort
@@ -25,7 +52,8 @@
   # List of aliases
   aliases   = !git config -l | grep alias | cut -c 7-
 
-  rebase-origin = !git fetch origin && git rebase origin/master
+  # Copy&paste helper
+  git = !git
 
 [core]
   editor = vim
