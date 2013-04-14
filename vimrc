@@ -18,6 +18,7 @@ Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+" Tmux integration
 Bundle 'benmills/vimux'
 
 Bundle 'tpope/vim-surround'
@@ -29,8 +30,6 @@ Bundle 'godlygeek/tabular'
 
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
-Bundle 'Townk/vim-autoclose'
-
 " Bundle 'vim-scripts/AutoComplPop'
 Bundle 'majutsushi/tagbar'
 Bundle 'sjl/gundo.vim'
@@ -45,16 +44,30 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+" HL for tmux config
 Bundle 'zaiste/tmux.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'ervandew/supertab'
 
 Bundle 'tpope/vim-pastie'
 
-Bundle 'vim-scripts/CSApprox'
-Bundle 'twilight'
+" Bundle 'vim-scripts/CSApprox'
+" Bundle 'twilight'
 Bundle 'w0ng/vim-hybrid'
 
 " Great plugin, but i dont use it. Maybe later
 " Bundle 'Lokaltog/vim-easymotion'
+" '3 of 15 results' for search ('/') - problems with \ mappings
+" Bundle 'IndexedSearch'
+" Tab completion inside search ('/'). Breaks history
+" Bundle 'vim-scripts/SearchComplete'
+" Dont like yet another vert column
+" Bundle 'airblade/vim-gitgutter'
+
+" Some tests with autoclose plugins:
+" Bundle 'Townk/vim-autoclose'
+Bundle 'vim-scripts/AutoClose'
+" Bundle 'kana/vim-smartinput'
 
 filetype plugin indent on " required!
 " ===================================================

@@ -107,6 +107,7 @@ set statusline+=%m%r%h%w                      " flags
 set statusline+=%=%-14.(%l\/%L,%c%V%)         " line and char numbers
 set statusline+=%=%y                          " type
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}] " encoding
+set statusline+=%{fugitive#statusline()}      " git branch
 
 " Buffers can live in background
 set hidden

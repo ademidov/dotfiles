@@ -23,6 +23,10 @@ map <silent> <leader>w :call utils#trimSpaces()<CR>:w!<CR>
 " Save current buffer, trim spaces and exit
 map <leader>q <leader>w :q!<CR>
 
+nmap <leader>gb :Gblame<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gl :Glog<CR>
+
 " Toggle nerdtree
 nmap <silent> <leader>p :NERDTreeToggle<CR>
 
@@ -41,6 +45,8 @@ nmap <leader>vq :VimuxCloseRunner<CR>
 nmap <leader>vi :VimuxInspectRunner<CR>
 " [s]top
 nmap <leader>vs :VimuxInterruptRunner<CR>
+" [c]ommand
+nmap <leader>vc :VimuxPromptCommand<CR>
 
 " CtrlP jump to
 map <leader>jm :CtrlP app/models<CR>
@@ -69,6 +75,10 @@ map <leader>es :split %%
 nnoremap <leader>f :Ack!<space>"<left>"
 " Search for word under cursor
 nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
+
+" Tab completion (from SearchComplete plugin) for ?
+" (plugin disabled)
+" noremap ? :call SearchCompleteStart()<CR>?
 
 " Toggle gundo
 map <Leader>u :GundoToggle<CR>
