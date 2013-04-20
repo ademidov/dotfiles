@@ -6,3 +6,4 @@ log/*.log
 tmp/**/*
 zeus.json
 zeus_plan.rb
+Session.vim
