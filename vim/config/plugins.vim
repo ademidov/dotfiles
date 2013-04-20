@@ -39,3 +39,6 @@ let g:tagbar_sort = 0 " Sort tags as defined in file
 " Gundo
 let g:gundo_help = 0 " hide help in graph window
 let g:gundo_close_on_revert = 1
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
