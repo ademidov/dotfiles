@@ -43,3 +43,7 @@ let g:gundo_close_on_revert = 1
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
+
+" vim-eunuch
+" :rename abbr for :Rename :)
+cabbrev rename <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Rename" : "rename"<CR>

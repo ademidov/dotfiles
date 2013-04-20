@@ -28,6 +28,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'godlygeek/tabular'
 Bundle 'ReplaceWithRegister'
+Bundle 'tpope/vim-eunuch'
 
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
