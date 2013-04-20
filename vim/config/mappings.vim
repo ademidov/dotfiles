@@ -40,6 +40,9 @@ nmap <silent> <leader>b :CtrlPBuffer<CR>
 " Search for tags
 nmap <silent> <leader>@ :CtrlPTag<CR>
 
+" ZoomWin
+map <silent> <leader>z :ZoomWin<CR>
+
 " Tmux (vimux) mappings
 " [l]ast
 nmap <leader>vl :VimuxRunLastCommand<CR>

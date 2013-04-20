@@ -52,6 +52,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'ervandew/supertab'
 
 Bundle 'tpope/vim-pastie'
+Bundle 'ZoomWin'
 
 " Bundle 'vim-scripts/CSApprox'
 " Bundle 'twilight'
