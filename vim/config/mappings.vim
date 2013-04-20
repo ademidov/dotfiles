@@ -128,6 +128,14 @@ xmap <buffer> <F7> <Plug>(xmpfilter-run)
 " C-space for switch keyboard layout
 imap <C-@> <C-^>
 
+" Scroll command-line history with C-k & C-j
+cnoremap <C-j> <t_kd>
+cnoremap <C-k> <t_ku>
+
+" C-a & C-e should work as expected at command-line mode
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
 " :)
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
