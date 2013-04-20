@@ -118,6 +118,9 @@ set undodir=~/.vim/backups
 set undofile
 
 " Ack to grep
-set grepprg=ack
+" set grepprg=ack
 
 set clipboard=unnamed
+
+" Prevent ack output to bleed into the terminal
+set shellpipe=&>
