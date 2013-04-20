@@ -127,3 +127,8 @@ set shellpipe=&>
 
 " Fast escape
 set ttimeoutlen=10
+
+" Russian language support
+set keymap=russian-jcukenwin
+set iminsert=0 " Use latin by default
+set imsearch=0 " Use latin by default

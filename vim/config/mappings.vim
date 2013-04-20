@@ -129,6 +129,9 @@ xmap <buffer> <F6> <Plug>(xmpfilter-mark)
 nmap <buffer> <F7> <Plug>(xmpfilter-run)
 xmap <buffer> <F7> <Plug>(xmpfilter-run)
 
+" C-space for switch keyboard layout
+imap <C-@> <C-^>
+
 " :)
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
