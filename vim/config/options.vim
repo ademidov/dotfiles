@@ -124,3 +124,6 @@ set clipboard=unnamed
 
 " Prevent ack output to bleed into the terminal
 set shellpipe=&>
+
+" Fast escape
+set ttimeoutlen=10
