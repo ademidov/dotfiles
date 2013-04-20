@@ -85,7 +85,7 @@ nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
 " noremap ? :call SearchCompleteStart()<CR>?
 
 " Toggle gundo
-map <Leader>u :GundoToggle<CR>
+map <leader>u :GundoToggle<CR>
 
 " Insert =>
 imap <buffer> <C-l> <space>=><space>
@@ -98,10 +98,6 @@ nnoremap <C-n> :call utils#numberToggle()<CR>
 
 " Yank from cursor to end of line
 nnoremap Y y$
-
-" Swap line and symbol mark jumps
-" nnoremap ' `
-" nnoremap ` '
 
 " Paste toggle
 set pastetoggle=<F5>
