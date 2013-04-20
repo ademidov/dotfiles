@@ -30,6 +30,6 @@ alias g='git'
 
 # Ruby
 alias b='bundle'
-alias z='zeus'
+alias sps='spin serve --push-results'
 
 alias evrone='$HOME/scripts/evrone-shell.sh'

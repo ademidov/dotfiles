@@ -27,7 +27,7 @@ let g:VimuxHeight = '30'
 let g:VimuxOrientation = 'v'
 
 " vim-turbux
-let g:turbux_command_prefix = 'zeus' " Use zeus to run specs
+let g:turbux_command_rspec = 'spin push'
 
 " AutoClose
 let g:AutoCloseExpandEnterOn = ""
