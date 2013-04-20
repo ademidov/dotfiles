@@ -5,8 +5,12 @@ nmap <silent> <leader>n :nohlsearch<CR>
 nmap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
 " Rails.vim alternate and related
-map <leader>ra :A<CR>
-map <leader>rr :R<CR>
+nmap <leader>ra :A<CR>
+nmap <leader>rr :R<CR>
+" Same in vsplit
+nmap <leader>RA :AV<CR>
+nmap <leader>RR :RV<CR>
+
 " Prompt for jump to migration (then <cr> for last migration, 0<cr> for seeds)
 nmap <leader>rm :Rmigration<space>
 " Prompt for rails generate
