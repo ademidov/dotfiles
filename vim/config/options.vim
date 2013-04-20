@@ -30,9 +30,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Highlight the line where the cursor is
-set cursorline
-
 " Use a popup to show the completion and matches the longest match first
 " set completeopt=longest,menuone
 
