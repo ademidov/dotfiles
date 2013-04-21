@@ -83,10 +83,6 @@ nnoremap <leader>f :Ack!<space>"<left>"
 " Search for word under cursor
 nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
 
-" Tab completion (from SearchComplete plugin) for ?
-" (plugin disabled)
-" noremap ? :call SearchCompleteStart()<CR>?
-
 " Toggle gundo
 map <leader>u :GundoToggle<CR>
 
@@ -121,6 +117,10 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Experimental
+noremap ;; ;
+map ; :
 
 " ruby evalution
 nmap <buffer> <F6> <Plug>(xmpfilter-mark)
