@@ -7,3 +7,5 @@ au BufReadPost *
 " Highlight cursor line only at current window
 autocmd WinLeave * set nocursorline
 autocmd WinEnter * set cursorline
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
