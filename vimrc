@@ -233,10 +233,10 @@ set gdefault
 set cursorline
 set nocursorcolumn
 
-" Section: Plugins {{{1
+" Section: Plugins options {{{1
 " ==============
 
-" CtrlP
+" CtrlP {{{2
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " let g:ctrlp_cmd = 'CtrlPMixed' " MRU+buffers+files
@@ -245,41 +245,41 @@ let g:ctrlp_mruf_relative = 1 " Show mru files only in the working directory
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 let g:ctrlp_use_caching = 0
 
-" vim-surround
+" vim-surround {{{2
 let g:surround_{char2nr('#')} = "#{\r}" " ysiw# to wrap word under cursow with #{}
 
-" NERDTree
+" NERDTree {{{2
 let NERDTreeMinimalUI = 1        " Disable bookmarks and help labels
 let NERDTreeAutoDeleteBuffer = 1 " Delete opened buffer when file removed/renamed
 let NERDTreeQuitOnOpen = 1       " Close tree on file open
 let NERDChristmasTree = 1        " Be colorful
 
-" ack.vim
+" ack.vim {{{2
 let g:ackprg='ack -H --nocolor --nogroup --column --smart-case --sort-files'
 
-" vimux
+" vimux {{{2
 let g:VimuxHeight = '30'
 let g:VimuxOrientation = 'v'
 
-" vim-turbux
+" vim-turbux {{{2
 let g:turbux_command_rspec = 'spin push'
 
-" AutoClose
+" AutoClose {{{2
 let g:AutoCloseExpandEnterOn = ""
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
-" Tagbar
+" Tagbar {{{2
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0 " Sort tags as defined in file
 
-" Gundo
+" Gundo {{{2
 let g:gundo_help = 0 " hide help in graph window
 let g:gundo_close_on_revert = 1
 
-" Supertab
+" Supertab {{{2
 let g:SuperTabDefaultCompletionType = "context"
 
-" vim-eunuch
+" vim-eunuch {{{2
 " :rename abbr for :Rename :)
 cabbrev rename <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Rename" : "rename"<CR>
 
