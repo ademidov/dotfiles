@@ -53,6 +53,7 @@ Bundle 'ervandew/supertab'
 
 Bundle 'tpope/vim-pastie'
 Bundle 'ZoomWin'
+" Bundle 'DrawIt'
 
 " Bundle 'vim-scripts/CSApprox'
 " Bundle 'twilight'
@@ -70,6 +71,7 @@ Bundle 'w0ng/vim-hybrid'
 " Some tests with autoclose plugins:
 " Bundle 'Townk/vim-autoclose'
 Bundle 'vim-scripts/AutoClose'
+" Bundle 'Raimondi/delimitMate'
 " Bundle 'kana/vim-smartinput'
 
 filetype plugin indent on " required!
