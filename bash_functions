@@ -5,6 +5,10 @@ function rvm () {
   fi
 }
 
+function mkd() {
+  mkdir -p "$@" && cd "$@"
+}
+
 function c() {
   cd ~/projects/$1
 }
