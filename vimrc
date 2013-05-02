@@ -29,6 +29,8 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'godlygeek/tabular'
 Bundle 'ReplaceWithRegister'
 Bundle 'tpope/vim-eunuch'
+" For :Subvert and coercions
+Bundle 'tpope/vim-abolish'
 
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
