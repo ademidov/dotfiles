@@ -129,3 +129,10 @@ set ttimeoutlen=10
 set keymap=russian-jcukenwin
 set iminsert=0 " Use latin by default
 set imsearch=0 " Use latin by default
+
+" Replace all occurences of a line with substitutions
+set gdefault
+
+" HL only cursor line
+set cursorline
+set nocursorcolumn
