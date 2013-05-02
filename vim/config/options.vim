@@ -80,8 +80,8 @@ set wildmode=list:longest,full
 " Ignore versioning and binary files at autocomplete
 set wildignore=git,*.swp,*.jpg,*.png,*.gif
 
-" Display extra whitespaces with dots and tabs with quotes
-set list listchars=tab:»·,trail:·
+" Display extra whitespaces with dots and tabs with triangles
+set list listchars=tab:▸\ ,trail:·
 
 " Strangle annoying prompts
 set shortmess=atI
