@@ -31,5 +31,6 @@ alias g='git'
 # Ruby
 alias b='bundle'
 alias sps='spin serve --push-results'
+alias spp='spin push'
 
 alias evrone='$HOME/scripts/evrone-shell.sh'
