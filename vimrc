@@ -389,7 +389,7 @@ let mapleader = ' '
 " Section: Autocommands {{{1
 
   " Restore cursor position
-  au BufReadPost *
+  autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
@@ -400,6 +400,8 @@ let mapleader = ' '
 
   autocmd Filetype gitcommit setlocal spell textwidth=72
   autocmd Filetype git,gitcommit setlocal foldmethod=syntax foldlevel=0
+
+  autocmd FileType vim setlocal keywordprg=:help
 
 " Section: UI {{{1
 
