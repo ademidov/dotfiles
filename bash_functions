@@ -35,6 +35,15 @@ function s() {
   fi
 }
 
+function g {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status -sb
+  fi
+}
+complete -F _git g
+
 # Rake completion
 # Stolen from https://github.com/ai/rake-completion
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}

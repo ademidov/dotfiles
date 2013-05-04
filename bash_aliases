@@ -25,9 +25,6 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   alias ls='command ls -G';
 fi;
 
-# Git
-alias g='git'
-
 # Ruby
 alias b='bundle'
 alias sps='spin serve --push-results'
