@@ -97,9 +97,12 @@ let mapleader = ' '
   set nowrap            " do not wrap lines
   set hidden            " buffers can live in background
   set ttyfast           " send more characters at a given time
-  set ttimeoutlen=10    " fast escape
   set shellpipe=&>      " prevent ack output to bleed into the terminal
   set clipboard=unnamed " OS X clipboard integration
+  set complete-=i       " comletion from included may be slow
+
+  set ttimeout
+  set ttimeoutlen=10    " fast escape
 
   " Interface {{{
     " set term=xterm-256color
@@ -140,6 +143,7 @@ let mapleader = ' '
     set expandtab                  " use spaces instead tabs
     set shiftwidth=2               " 2 spaces for indenting with >>
     set tabstop=2                  " 2 spaces for tab
+    set shiftround
   "}}}
   " Command line completions {{{
     set wildmenu                               " enable enhanced completion
@@ -155,7 +159,7 @@ let mapleader = ' '
     set statusline+=%{fugitive#statusline()}      " git branch
   "}}}
   " Persistent undo {{{
-    silent !mkdir $HOME/vim/undo > /dev/null 2>&1
+    silent !mkdir $HOME/.vim/undo > /dev/null 2>&1
     set undodir=~/.vim/undo                       " where to store undo files
     set undofile                                  " enable undofile
     set undolevels=500                            " max undos stored
