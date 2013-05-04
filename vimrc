@@ -399,6 +399,7 @@ let mapleader = ' '
   autocmd WinEnter * set cursorline
 
   autocmd Filetype gitcommit setlocal spell textwidth=72
+  autocmd Filetype git,gitcommit setlocal foldmethod=syntax foldlevel=0
 
 " Section: UI {{{1
 
