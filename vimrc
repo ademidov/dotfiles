@@ -42,6 +42,7 @@ let mapleader = ' '
   Bundle 'bootleq/vim-textobj-rubysymbol'
   Bundle 't9md/vim-ruby-xmpfilter'
   Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-bundler'
 
   Bundle 'tpope/vim-haml'
   Bundle 'slim-template/vim-slim'
