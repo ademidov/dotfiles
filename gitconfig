@@ -76,6 +76,9 @@
 [github]
   user = ademidov
 
+[web]
+  browser = open
+
 [color]
   diff   = true
   grep   = true
