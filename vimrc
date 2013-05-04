@@ -6,9 +6,9 @@ let mapleader = ' '
 " Section: External {{{1
 
   " Initialize Vundle - https://github.com/gmarik/vundle {{{
-  filetype off                       " required to initialize
-  set rtp+=$HOME/.vim/bundle/vundle/ " include vundle
-  call vundle#rc()                   " init vundle
+    filetype off                       " required to initialize
+    set rtp+=$HOME/.vim/bundle/vundle/ " include vundle
+    call vundle#rc()                   " init vundle
   "}}}
 
   " Let Vundle manage Vundle
@@ -58,32 +58,29 @@ let mapleader = ' '
   Bundle 'vim-scripts/AutoClose'
 
   " Unused {{{
-  " ===========
+    " Bundle 'DrawIt'
+    " Bundle 'vim-scripts/CSApprox'
+    " Bundle 'twilight'
 
-  " Bundle 'DrawIt'
-  " Bundle 'vim-scripts/CSApprox'
-  " Bundle 'twilight'
+    " Great plugin, but i dont use it. Maybe later
+    " Bundle 'Lokaltog/vim-easymotion'
 
-  " Great plugin, but i dont use it. Maybe later
-  " Bundle 'Lokaltog/vim-easymotion'
+    " '3 of 15 results' for search ('/') - problems with \ mappings
+    " Bundle 'IndexedSearch'
 
-  " '3 of 15 results' for search ('/') - problems with \ mappings
-  " Bundle 'IndexedSearch'
+    " Tab completion inside search ('/'). Breaks history
+    " Bundle 'vim-scripts/SearchComplete'
 
-  " Tab completion inside search ('/'). Breaks history
-  " Bundle 'vim-scripts/SearchComplete'
+    " Dont like yet another vert column
+    " Bundle 'airblade/vim-gitgutter'
 
-  " Dont like yet another vert column
-  " Bundle 'airblade/vim-gitgutter'
+    " Some tests with autoclose plugins:
+    " Bundle 'Townk/vim-autoclose'
+    " Bundle 'Raimondi/delimitMate'
+    " Bundle 'kana/vim-smartinput'
 
-  " Some tests with autoclose plugins:
-  " Bundle 'Townk/vim-autoclose'
-  " Bundle 'Raimondi/delimitMate'
-  " Bundle 'kana/vim-smartinput'
-
-  " Too noisy
-  " Bundle 'vim-scripts/AutoComplPop'
-
+    " Too noisy
+    " Bundle 'vim-scripts/AutoComplPop'
   " }}}
 
   filetype plugin indent on " required!
@@ -157,10 +154,10 @@ let mapleader = ' '
     set statusline+=%{fugitive#statusline()}      " git branch
   "}}}
   " Persistent undo {{{
-    silent !mkdir ~/.vim/undo > /dev/null 2>&1 " create undodir
-    set undodir=~/.vim/undo                    " where to store undo files
-    set undofile                               " enable undofile
-    set undolevels=500                         " max undos stored
+    silent !mkdir $HOME/vim/undo > /dev/null 2>&1
+    set undodir=~/.vim/undo                       " where to store undo files
+    set undofile                                  " enable undofile
+    set undolevels=500                            " max undos stored
   "}}}
   " Russian language support {{{
     set keymap=russian-jcukenwin
