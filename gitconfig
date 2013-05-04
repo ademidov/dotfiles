@@ -10,7 +10,6 @@
   amend    = commit -v --amend
 
   # branch
-  b = branch
   br = branch
 
   # diff
@@ -25,7 +24,6 @@
 
   # checkout
   co = checkout
-  nb = checkout -b # [n]ew[b]ranch
 
   # cherry-pick
   cp = cherry-pick -x
