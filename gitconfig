@@ -54,10 +54,14 @@
 
   # Copy&paste helper
   git = !git
+  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
 
 [core]
   editor = vim
   excludesfile = ~/.gitignore
+
+[init]
+  templatedir = ~/.git_template
 
 [merge]
   tool = vimdiff
