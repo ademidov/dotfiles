@@ -323,6 +323,9 @@ let mapleader = ' '
   " Toggle gundo
   map <leader>u :GundoToggle<CR>
 
+  " Markdown preview
+  nnoremap <leader>m :!open -a Marked.app '%:p'<cr><cr>
+
   " Insert =>
   imap <buffer> <C-l> <space>=><space>
 
