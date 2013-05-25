@@ -7,7 +7,7 @@
 
   # commit
   ci = commit -v
-  amend    = commit -v --amend
+  cam = commit -v --amend
 
   # branch
   br = branch
