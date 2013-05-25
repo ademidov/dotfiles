@@ -94,6 +94,7 @@ let mapleader = ' '
   set autoread          " look for external writings to the current buffer
   set history=1000      " loong commands history
   set splitright        " put new windows on the right
+  set splitbelow        " and below
   set textwidth=79      " universal width
   set nowrap            " do not wrap lines
   set hidden            " buffers can live in background
