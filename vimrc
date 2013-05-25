@@ -176,6 +176,11 @@ let mapleader = ' '
     set nowritebackup " no backups on save
     set noswapfile    " no swap files (eg. .myfile.txt.swp)
   "}}}
+  " Folding {{{
+    set foldcolumn=0      " no folding columns
+    set foldmethod=syntax
+    " set foldlevelstart=99 " folds open by default
+  "}}}
 
 " Section: Plugins options {{{1
 
