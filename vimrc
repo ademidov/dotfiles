@@ -13,6 +13,7 @@ let mapleader = ' '
 
   " Let Vundle manage Vundle
   Bundle 'gmarik/vundle'
+  Bundle 'vim-ruby/vim-ruby'
 
   Bundle 'mileszs/ack.vim'
   Bundle 'kien/ctrlp.vim'
