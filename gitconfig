@@ -11,6 +11,7 @@
 
   # branch
   br = branch
+  brname = rev-parse --abbrev-ref HEAD
 
   # diff
   # ustaged
@@ -38,7 +39,7 @@
   uncommit = reset --soft HEAD^
 
   # push
-  pc        = !git rev-parse --abbrev-ref HEAD | xargs git push origin
+  pc        = !git brname | xargs git push origin
 
   # merge
   unmerged  = !git ls-files --unmerged | cut -f2 | sort -u
@@ -81,6 +82,9 @@
 
 [web]
   browser = open
+
+[push]
+  default = current
 
 [color]
   diff   = true
