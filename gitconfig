@@ -63,6 +63,7 @@
 
 [merge]
   tool = vimdiff
+  ff = only
   # Show commits on merge
   log = true
 
