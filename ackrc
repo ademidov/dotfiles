@@ -1,7 +1,7 @@
 --smart-case
 --sort-files
 --color
---follow
+--nofollow
 --group
 
 --type-add=js=.coffee
