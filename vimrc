@@ -45,6 +45,8 @@ let mapleader = ' '
   Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-bundler'
 
+  Bundle 'jimenezrick/vimerl'
+
   Bundle 'tpope/vim-haml'
   Bundle 'slim-template/vim-slim'
   Bundle 'kchmck/vim-coffee-script'
@@ -177,9 +179,10 @@ let mapleader = ' '
     set noswapfile    " no swap files (eg. .myfile.txt.swp)
   "}}}
   " Folding {{{
+    set foldenable
     set foldcolumn=0      " no folding columns
     set foldmethod=syntax
-    " set foldlevelstart=99 " folds open by default
+    set foldlevelstart=99 " folds open by default
   "}}}
 
 " Section: Plugins options {{{1
@@ -230,6 +233,9 @@ let mapleader = ' '
   " vim-eunuch {{{2
     " :rename abbr for :Rename :)
     cabbrev rename <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Rename" : "rename"<CR>
+
+  " vimerl {{{2
+    let erlang_folding = 1
 
 " Section: Commands {{{1
 
