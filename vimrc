@@ -1,4 +1,4 @@
-" vim:set foldmethod=marker foldlevel=0:
+" vim:set foldenable foldmethod=marker foldlevel=0:
 
 set nocompatible    " we are in 2013
 let mapleader = ' '
@@ -188,10 +188,9 @@ let mapleader = ' '
     set noswapfile    " no swap files (eg. .myfile.txt.swp)
   "}}}
   " Folding {{{
-    set foldenable
+    set nofoldenable
     set foldcolumn=0      " no folding columns
     set foldmethod=syntax
-    set foldlevelstart=99 " folds open by default
   "}}}
 
 " Section: Plugins options {{{1
@@ -454,7 +453,7 @@ let mapleader = ' '
     autocmd!
 
     autocmd Filetype gitcommit setlocal spell textwidth=72
-    autocmd Filetype git,gitcommit setlocal foldmethod=syntax foldlevel=0
+    autocmd Filetype git,gitcommit setlocal foldenable foldmethod=syntax foldlevel=0
 
     autocmd FileType vim setlocal keywordprg=:help
   augroup END "}}}
