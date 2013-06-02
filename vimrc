@@ -13,53 +13,59 @@ let mapleader = ' '
 
   " Let Vundle manage Vundle
   Bundle 'gmarik/vundle'
-  Bundle 'vim-ruby/vim-ruby'
 
-  Bundle 'mileszs/ack.vim'
-  Bundle 'kien/ctrlp.vim'
-  Bundle 'scrooloose/nerdtree'
-  " Tmux integration
-  Bundle 'benmills/vimux'
-
-  Bundle 'tpope/vim-surround'
-  Bundle 'AndrewRadev/splitjoin.vim'
-  Bundle 'kana/vim-textobj-user'
-  Bundle 'tpope/vim-repeat'
-  Bundle 'michaeljsmith/vim-indent-object'
-  Bundle 'godlygeek/tabular'
-  Bundle 'ReplaceWithRegister'
+  " General
   Bundle 'tpope/vim-eunuch'
   " For :Subvert and coercions
   Bundle 'tpope/vim-abolish'
-
-  Bundle 'tpope/vim-unimpaired'
-  Bundle 'tpope/vim-commentary'
-  Bundle 'majutsushi/tagbar'
+  Bundle 'ZoomWin'
+  " Tmux integration
+  Bundle 'benmills/vimux'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-pastie'
   Bundle 'sjl/gundo.vim'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-unimpaired'
 
-  Bundle 'tpope/vim-rails'
-  Bundle 'jgdavey/vim-turbux'
+  " Navigation
+  Bundle 'mileszs/ack.vim'
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'majutsushi/tagbar'
+
+  " Text editing
+  Bundle 'AndrewRadev/splitjoin.vim'
+  Bundle 'ReplaceWithRegister'
+  Bundle 'godlygeek/tabular'
+  Bundle 'ervandew/supertab'
+  Bundle 'tpope/vim-commentary'
+  Bundle 'vim-scripts/AutoClose'
+  Bundle 'tpope/vim-surround'
+
+  " Text objects
+  Bundle 'kana/vim-textobj-user'
   Bundle 'nelstrom/vim-textobj-rubyblock'
   Bundle 'bootleq/vim-textobj-rubysymbol'
+  Bundle 'michaeljsmith/vim-indent-object'
+
+  " Ruby & Rails
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'tpope/vim-rails'
+  Bundle 'jgdavey/vim-turbux'
   Bundle 't9md/vim-ruby-xmpfilter'
   Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-bundler'
 
+  " Other languages
   Bundle 'jimenezrick/vimerl'
-
   Bundle 'tpope/vim-haml'
   Bundle 'slim-template/vim-slim'
   Bundle 'kchmck/vim-coffee-script'
   " HL for tmux config
   Bundle 'zaiste/tmux.vim'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'ervandew/supertab'
 
-  Bundle 'tpope/vim-pastie'
-  Bundle 'ZoomWin'
-
+  " UI
   Bundle 'w0ng/vim-hybrid'
-  Bundle 'vim-scripts/AutoClose'
 
   " Unused {{{
     " Bundle 'DrawIt'
