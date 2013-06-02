@@ -114,13 +114,16 @@ let mapleader = ' '
   set ttimeout
   set ttimeoutlen=10    " fast escape
 
+  " More faster scrolling: http://vim.wikia.com/wiki/Fix_syntax_highlighting
+  syntax sync minlines=256
+
   " Interface {{{
     " set term=xterm-256color
     " set term=gnome-256color
     set t_Co=256       " a lot of colors in terminal
 
     set ruler          " show the cursor position all the time
-    set cursorline     " HL cursor line
+    set nocursorline   " do not HL cursor line
     set nocursorcolumn " does not HL cursor column
     set laststatus=2   " always show status line
     set showcmd        " show the current command at lower right corner
