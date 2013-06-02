@@ -327,9 +327,6 @@ let mapleader = ' '
   " Switch between last two buffers
   nnoremap <leader><leader> <c-^>
 
-  " Close buffer
-  nmap <leader>d :bd<CR>
-
   " Edit file in current dir ([e]dit in [w]indow, [s]plit, [v]split)
   cnoremap %% <C-R>=expand('%:p:h').'/'<cr>
   map <leader>ew :edit %%
@@ -350,8 +347,8 @@ let mapleader = ' '
   " Insert =>
   imap <buffer> <C-l> <space>=><space>
 
-  " Execute q macro
-  nmap Q @q
+  " Intelligently close a window
+  nnoremap <silent> Q :call utils#closeWindowOrKillBuffer()<CR>
 
   " Toggle relative and absolute line numbers
   nnoremap <C-n> :call utils#numberToggle()<CR>
