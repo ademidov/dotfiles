@@ -18,7 +18,6 @@ let mapleader = ' '
   Bundle 'tpope/vim-eunuch'
   " For :Subvert and coercions
   Bundle 'tpope/vim-abolish'
-  Bundle 'ZoomWin'
   " Tmux integration
   Bundle 'benmills/vimux'
   Bundle 'tpope/vim-fugitive'
@@ -297,9 +296,6 @@ let mapleader = ' '
 
   " Search for tags
   nmap <silent> <leader>@ :CtrlPTag<CR>
-
-  " ZoomWin
-  map <silent> <leader>z :ZoomWin<CR>
 
   " Tmux (vimux) mappings
   " [l]ast
