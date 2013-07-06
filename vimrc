@@ -62,6 +62,7 @@ let mapleader = ' '
   Bundle 'kchmck/vim-coffee-script'
   " HL for tmux config
   Bundle 'zaiste/tmux.vim'
+  Bundle 'haskell.vim'
 
   " UI
   Bundle 'w0ng/vim-hybrid'
@@ -340,8 +341,9 @@ let mapleader = ' '
   " Markdown preview
   nnoremap <leader>m :!open -a Marked.app '%:p'<cr><cr>
 
-  " Insert =>
-  imap <buffer> <C-l> <space>=><space>
+  " Insert new line
+  map <leader>o o<ESC>
+  map <leader>O O<ESC>
 
   " Intelligently close a window
   nnoremap <silent> Q :call utils#closeWindowOrKillBuffer()<CR>
