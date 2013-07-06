@@ -60,3 +60,11 @@ _rakecomplete() {
 }
 
 complete -o default -o nospace -F _rakecomplete rake
+
+function ssht(){
+  ssh $* -t 'tmux a || tmux || /bin/bash'
+}
+
+function vtmux() {
+  vagrant ssh -- -t 'tmux a || tmux || /bin/bash'
+}
