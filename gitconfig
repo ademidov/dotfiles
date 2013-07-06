@@ -55,6 +55,9 @@
   git = !git
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
 
+  root = rev-parse --show-toplevel
+  repo = "!f() { if [ -n \"$(git rev-parse --is-inside-work-tree 2> /dev/null)\" ] ; then echo $(basename $(git root)):$(git brname); else exit 1; fi; }; f"
+
 [core]
   editor = vim
   excludesfile = ~/.gitignore
@@ -64,7 +67,6 @@
 
 [merge]
   tool = vimdiff
-  ff = only
   # Show commits on merge
   log = true
 
