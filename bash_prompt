@@ -7,4 +7,4 @@ fi
 function usernamehost() {
   if [ $USER != $default_username ]; then echo "\u@\h:"; fi
 }
-PS1="\${debian_chroot:+($debian_chroot)}\$(usernamehost)\w\$ "
+PS1="\e[0;33m[\${debian_chroot:+($debian_chroot)}\$(usernamehost)\w]>\e[0m "
