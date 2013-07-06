@@ -9,3 +9,4 @@ zeus_plan.rb
 Session.vim
 .ackrc
 tags
+.local/
