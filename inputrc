@@ -6,6 +6,9 @@ set convert-meta off
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 
+# Show all completions
+set show-all-if-ambiguous on
+
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
 
@@ -13,6 +16,9 @@ set mark-symlinked-directories on
 # commands (i.e. more intelligent Up/Down behavior)
 "\e[B": history-search-forward
 "\e[A": history-search-backward
+
+# Auto append completions
+TAB: menu-complete
 
 # Be more intelligent when autocompleting by also looking at the text after
 # the cursor. For example, when the current line is "cd ~/src/mozil", and
