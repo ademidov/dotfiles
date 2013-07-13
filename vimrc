@@ -21,7 +21,6 @@ let mapleader = ' '
   " Tmux integration
   Bundle 'benmills/vimux'
   Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-pastie'
   Bundle 'sjl/gundo.vim'
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-unimpaired'
@@ -44,7 +43,6 @@ let mapleader = ' '
   " Text objects
   Bundle 'kana/vim-textobj-user'
   Bundle 'nelstrom/vim-textobj-rubyblock'
-  Bundle 'bootleq/vim-textobj-rubysymbol'
   Bundle 'michaeljsmith/vim-indent-object'
 
   " Ruby & Rails
