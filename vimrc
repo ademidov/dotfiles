@@ -180,7 +180,7 @@ let mapleader = ' '
     set statusline+=%=%-14.(%l\/%L,%c%V%)         " line and char numbers
     set statusline+=%=%y                          " type
     set statusline+=[%{strlen(&fenc)?&fenc:&enc}] " encoding
-    set statusline+=%{fugitive#statusline()}      " git branch
+    set statusline+=[git:%{fugitive#head()}]      " git branch
   "}}}
   " Persistent undo {{{
     silent !mkdir $HOME/.vim/undo > /dev/null 2>&1
