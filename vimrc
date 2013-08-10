@@ -1,5 +1,3 @@
-" vim:set foldenable foldmethod=marker foldlevel=0:
-
 set nocompatible    " we are in 2013
 let mapleader = ' '
 
@@ -461,7 +459,7 @@ let mapleader = ' '
     autocmd Filetype gitcommit setlocal spell textwidth=72
     autocmd Filetype git,gitcommit setlocal foldenable foldmethod=syntax foldlevel=0
 
-    autocmd FileType vim setlocal keywordprg=:help
+    autocmd FileType vim setlocal keywordprg=:help foldenable foldmethod=marker foldlevel=0
 
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
   augroup END "}}}
