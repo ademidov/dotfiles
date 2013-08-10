@@ -7,4 +7,12 @@ fi
 function usernamehost() {
   if [ $USER != $default_username ]; then echo "\u@\h:"; fi
 }
-PS1="\e[0;33m[\${debian_chroot:+($debian_chroot)}\$(usernamehost)\w]>\e[0m "
+
+MAGENTA="\[\033[0;31m\]"
+ORANGE="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+PURPLE="\[\033[0;35m\]"
+WHITE="\[\033[0;37m\]"
+RESET="\[\033[m\]"
+
+PS1="${ORANGE}[\${debian_chroot:+($debian_chroot)}\$(usernamehost)\w]>${RESET} "
