@@ -22,7 +22,6 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'christoomey/vim-tmux-navigator'
 " Bundle 'LustyJuggler'
 
 " Text editing
