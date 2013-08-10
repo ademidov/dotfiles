@@ -147,10 +147,10 @@ let mapleader = ' '
     set list                      " show unprintable characters
     set listchars=tab:▸\ ,trail:· " display extra whitespaces with dots and tabs with triangles
 
-    set number         " show line numbers
-    set numberwidth=1  " as small as possible width for numbers
-    set relativenumber " relative number are awesome
-    au BufReadPost,BufNewFile * set relativenumber
+    set number           " show line numbers
+    set numberwidth=1    " as small as possible width for numbers
+    set norelativenumber " relative numbers not so awesome
+    au BufReadPost,BufNewFile * set norelativenumber
   "}}}
   " Search and replace {{{
     set hlsearch   " highlight search
