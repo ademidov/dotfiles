@@ -201,7 +201,7 @@ let mapleader = ' '
   " Folding {{{
     set nofoldenable
     set foldcolumn=0      " no folding columns
-    set foldmethod=syntax
+    set foldmethod=indent
   "}}}
 
 " Section: Plugins options {{{1
