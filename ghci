@@ -1,5 +1,6 @@
-:set prompt "\ESC[32mλ %s > \ESC[m"
+:set prompt "\ESC[32mλ > \ESC[m"
 :set editor vim
 
-:def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
-:def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
+:def hoogle \x -> return $ ":!hoogle --color \"" ++ x ++ "\""
+:def doc \x -> return $ ":!hoogle --info --color \"" ++ x ++ "\""
+:def pl \s -> return $ ":! pointfree \"" ++ s ++ "\""
