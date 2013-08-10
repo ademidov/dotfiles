@@ -318,7 +318,7 @@ runtime macros/matchit.vim
 
   " http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session {{{
     function! ResCur()
-      if line("'\"") <= line("$")
+      if &filetype !~ 'commit\c' && line("'\"") <= line("$")
         normal! g`"
         return 1
       endif
@@ -340,7 +340,6 @@ runtime macros/matchit.vim
         return 1
       endif
     endfunction
-
 
     augroup RestorePosition
       autocmd!
