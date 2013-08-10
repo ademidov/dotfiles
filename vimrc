@@ -143,6 +143,10 @@ runtime macros/matchit.vim
   " Supertab {{{2
     let g:SuperTabDefaultCompletionType = "context"
 
+  " neocomplete {{{2
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+
   " vim-eunuch {{{2
     " :rename abbr for :Rename :)
     cabbrev rename <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Rename" : "rename"<CR>
@@ -288,6 +292,9 @@ runtime macros/matchit.vim
 
   " C-space for switch keyboard layout
   imap <C-@> <C-^>
+
+  " Tab for scrolling completions
+  inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<tab>"
 
   " Scroll command-line history with C-k & C-j
   cnoremap <C-j> <t_kd>
