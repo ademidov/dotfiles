@@ -136,10 +136,6 @@ runtime macros/matchit.vim
     let g:AutoCloseExpandEnterOn = ""
     let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
-  " Tagbar {{{2
-    let g:tagbar_compact = 1
-    let g:tagbar_sort = 0 " Sort tags as defined in file
-
   " Gundo {{{2
     let g:gundo_help = 0 " hide help in graph window
     let g:gundo_close_on_revert = 1
@@ -265,9 +261,6 @@ runtime macros/matchit.vim
 
   " Paste toggle
   set pastetoggle=<F5>
-
-  " Toggle taglist
-  nnoremap <silent> <F8> :TagbarToggle<CR>
 
   " Scroll viewport by 3 lines
   nnoremap <C-e> 3<C-e>
