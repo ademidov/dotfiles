@@ -4,10 +4,18 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 
-IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 
-IRB.conf[:PROMPT_MODE] = :DEFAULT
+IRB.conf[:PROMPT][:CUSTOM] = {
+  :PROMPT_I => "\e[0;32m%N(%m):%03n:%i>\e[0m ",
+  :PROMPT_N => "\e[0;32m%N(%m):%03n:%i>\e[0m ",
+  :PROMPT_S => "\e[0;32m%N(%m):%03n:%i%l\e[0m ",
+  :PROMPT_C => "\e[0;32m%N(%m):%03n:%i*\e[0m ",
+  :RETURN => "=> %s\n"
+}
+
+IRB.conf[:PROMPT_MODE] = :CUSTOM
 IRB.conf[:AUTO_INDENT] = true
 
 def xcopy(str)
