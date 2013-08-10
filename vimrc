@@ -35,10 +35,12 @@ let mapleader = ' '
   Bundle 'AndrewRadev/splitjoin.vim'
   Bundle 'ReplaceWithRegister'
   Bundle 'godlygeek/tabular'
-  Bundle 'ervandew/supertab'
   Bundle 'tpope/vim-commentary'
   Bundle 'vim-scripts/AutoClose'
   Bundle 'tpope/vim-surround'
+  Bundle 'Valloric/YouCompleteMe'
+  " Maybe 'Shougo/neocomplete.vim'?
+  " Bundle 'ervandew/supertab'
 
   " Text objects
   Bundle 'kana/vim-textobj-user'
@@ -53,6 +55,13 @@ let mapleader = ' '
   Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-bundler'
 
+  " Haskell
+  Bundle 'Shougo/vimproc.vim'
+  Bundle 'eagletmt/ghcmod-vim'
+  Bundle 'dag/vim2hs'
+  Bundle 'ujihisa/neco-ghc'
+  " Bundle 'haskell.vim'
+
   " Other languages
   Bundle 'jimenezrick/vimerl'
   Bundle 'tpope/vim-haml'
@@ -60,7 +69,6 @@ let mapleader = ' '
   Bundle 'kchmck/vim-coffee-script'
   " HL for tmux config
   Bundle 'zaiste/tmux.vim'
-  Bundle 'haskell.vim'
 
   " UI
   Bundle 'w0ng/vim-hybrid'
@@ -89,6 +97,11 @@ let mapleader = ' '
 
     " Too noisy
     " Bundle 'vim-scripts/AutoComplPop'
+
+    " Bundle 'scrooloose/syntastic'
+    " Bundle 'int3/vim-extradite'
+
+    " Bundle 'kien/rainbow_parentheses.vim'
   " }}}
 
   filetype plugin indent on " required!
@@ -107,7 +120,7 @@ let mapleader = ' '
   set ttyfast           " send more characters at a given time
   set shellpipe=&>      " prevent ack output to bleed into the terminal
   set clipboard=unnamed " OS X clipboard integration
-  set complete-=i       " comletion from included may be slow
+  " set complete-=i       " comletion from included may be slow
 
   set ttimeout
   set ttimeoutlen=10    " fast escape
@@ -449,6 +462,8 @@ let mapleader = ' '
     autocmd Filetype git,gitcommit setlocal foldenable foldmethod=syntax foldlevel=0
 
     autocmd FileType vim setlocal keywordprg=:help
+
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
   augroup END "}}}
 
 " Section: UI {{{1
