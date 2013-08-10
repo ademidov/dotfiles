@@ -339,13 +339,6 @@ runtime macros/matchit.vim
       autocmd!
       autocmd BufWinEnter * if ResCur() | call UnfoldCur() | endif
     augroup END "}}}
-  augroup Main "{{{
-    autocmd!
-
-    " Highlight cursor line only at current window
-    autocmd WinLeave * set nocursorline
-    autocmd WinEnter * set cursorline
-  augroup END "}}}
   augroup FtOptions "{{{
     autocmd!
 
