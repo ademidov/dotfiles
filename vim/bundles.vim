@@ -63,6 +63,7 @@ Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
 " HL for tmux config
 Bundle 'zaiste/tmux.vim'
+Bundle 'elzr/vim-json'
 
 " UI
 Bundle 'w0ng/vim-hybrid'
