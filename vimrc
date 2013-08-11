@@ -351,3 +351,6 @@ runtime macros/matchit.vim
 
   " Enable syntax higlighter
   syntax on
+
+  " Highlight VCS conflict markers (thanks, @sjl)
+  match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
