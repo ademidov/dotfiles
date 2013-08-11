@@ -320,35 +320,13 @@ runtime macros/matchit.vim
 
 " Section: Autocommands {{{1
 
-  " http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session {{{
-    function! ResCur()
-      if &filetype !~ 'commit\c' && line("'\"") <= line("$")
-        normal! g`"
-        return 1
-      endif
-    endfunction
-
-    function! UnfoldCur()
-      if !&foldenable
-        return
-      endif
-      let cl = line(".")
-      if cl <= 1
-        return
-      endif
-      let cf  = foldlevel(cl)
-      let uf  = foldlevel(cl - 1)
-      let min = (cf > uf ? uf : cf)
-      if min
-        execute "normal!" min . "zo"
-        return 1
-      endif
-    endfunction
-
-    augroup RestorePosition
-      autocmd!
-      autocmd BufWinEnter * if ResCur() | call UnfoldCur() | endif
-    augroup END "}}}
+  augroup RestorePosition " {{{
+    autocmd!
+    autocmd BufWinEnter *
+      \ if &filetype !~ 'commit\c' && line("'\"") > 0 && line("'\"") <= line("$") |
+      \     execute 'normal! g`"zvzz' |
+      \ endif
+  augroup END "}}}
   augroup FtOptions "{{{
     autocmd!
 
