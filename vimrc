@@ -304,6 +304,10 @@ runtime macros/matchit.vim
   cnoremap <C-a> <Home>
   cnoremap <C-e> <End>
 
+  " Filetype switching
+  nnoremap _rb = :set filetype=ruby<CR>
+  nnoremap _jn = :set filetype=json<CR>
+
   " :)
   inoremap  <Up>     <NOP>
   inoremap  <Down>   <NOP>
