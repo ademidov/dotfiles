@@ -359,6 +359,12 @@ runtime macros/matchit.vim
 
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
   augroup END "}}}
+  augroup Stuff "{{{
+    autocmd!
+
+    " Resize splits when the window is resized
+    autocmd VimResized * :wincmd =
+  augroup END "}}}
 
 " Section: UI {{{1
 
