@@ -258,7 +258,7 @@ runtime macros/matchit.vim
   nnoremap <silent> Q :call utils#closeWindowOrKillBuffer()<CR>
 
   " Toggle relative and absolute line numbers
-  nnoremap <C-n> :call utils#numberToggle()<CR>
+  nnoremap <C-n> :set relativenumber!<CR>
 
   " Yank from cursor to end of line
   nnoremap Y y$
