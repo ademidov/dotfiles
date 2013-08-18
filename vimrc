@@ -48,7 +48,6 @@ runtime macros/matchit.vim
     set number           " show line numbers
     set numberwidth=1    " as small as possible width for numbers
     set norelativenumber " relative numbers not so awesome
-    au BufReadPost,BufNewFile * set norelativenumber
   "}}}
   " Search and replace {{{
     set hlsearch   " highlight search
