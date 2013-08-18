@@ -18,6 +18,34 @@ IRB.conf[:PROMPT][:CUSTOM] = {
 IRB.conf[:PROMPT_MODE] = :CUSTOM
 IRB.conf[:AUTO_INDENT] = true
 
+def require_without_bundler(gem_name, version = nil)
+  return require(gem_name) unless defined?(::Bundler)
+
+  name = version ? "#{gem_name}-#{version}" : "#{gem_name}*"
+  paths = Dir.glob("{#{Gem.path.join(',')}}/gems/#{name}*")
+  if paths.empty?
+    raise LoadError, "[External require] #{gem_name}: Not found"
+  elsif paths.one?
+    gem_path = paths.first
+    $LOAD_PATH << "#{gem_path}/lib"
+    puts "[External require] #{gem_name}: #{gem_path}"
+    require gem_name
+  else
+    raise LoadError, "[External require] #{gem_name}: Ambiguous match(#{paths.map{|p|File.basename(p)}.join(', ')})"
+  end
+end
+
+begin
+  require_without_bundler 'looksee'
+  require_without_bundler 'awesome_print'
+  require_without_bundler 'interactive_editor'
+  # require_without_bundler 'rcodetools'
+  # require 'rcodetools/xmpfilter'
+  Looksee.editor = "vim +%l %f -c 'normal zz'"
+rescue LoadError => e
+  puts e
+end
+
 def xcopy(str)
   IO.popen('xclip -selection clipboard', 'w') { |f| f << str.to_s }
   str
