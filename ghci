@@ -1,4 +1,4 @@
-:set prompt "\ESC[32mλ > \ESC[m"
+:set prompt "\ESC[32mλ> \ESC[m"
 :set editor vim
 
 :def hoogle \x -> return $ ":!hoogle --color \"" ++ x ++ "\""
