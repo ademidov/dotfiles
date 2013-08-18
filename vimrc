@@ -340,7 +340,7 @@ runtime macros/matchit.vim
 
     autocmd FileType vim setlocal keywordprg=:help foldenable foldmethod=marker foldlevel=0
 
-    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc keywordprg=hoogle\ --info\ --color
   augroup END "}}}
   augroup Stuff "{{{
     autocmd!
