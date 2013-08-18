@@ -139,6 +139,8 @@ runtime macros/matchit.vim
   " Gundo {{{2
     let g:gundo_help = 0 " hide help in graph window
     let g:gundo_close_on_revert = 1
+    let g:gundo_preview_statusline = "Gundo Preview"
+    let g:gundo_tree_statusline = "Gundo Tree"
 
   " neocomplete {{{2
     let g:neocomplete#enable_at_startup = 1
