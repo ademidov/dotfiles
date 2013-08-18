@@ -157,6 +157,9 @@ runtime macros/matchit.vim
   " vim2hs {{{2
     let g:haskell_conceal = 0
 
+  " gitv {{{2
+    let g:Gitv_DoNotMapCtrlKey = 1
+
 " Section: Commands {{{1
 
   " Google search
@@ -202,6 +205,8 @@ runtime macros/matchit.vim
   nmap <leader>gl :Glog<CR>
   nmap <leader>gd :Gdiff<CR>
   nmap <leader>gw :Gwrite<CR>
+  nmap <leader>gv :Gitv --all<cr>
+  vmap <leader>gv :Gitv!<cr>
 
   " Toggle nerdtree
   nmap <silent> <leader>p :NERDTreeToggle<CR>

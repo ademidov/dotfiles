@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 " General
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
