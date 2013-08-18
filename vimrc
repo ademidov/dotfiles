@@ -334,7 +334,7 @@ runtime macros/matchit.vim
     autocmd!
 
     autocmd Filetype gitcommit setlocal spell textwidth=72
-    autocmd Filetype git,gitcommit setlocal foldenable foldmethod=syntax foldlevel=0
+    autocmd Filetype git,gitcommit setlocal foldenable foldmethod=syntax
 
     autocmd FileType vim setlocal keywordprg=:help foldenable foldmethod=marker foldlevel=0
 
