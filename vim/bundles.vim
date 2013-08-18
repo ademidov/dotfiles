@@ -31,7 +31,6 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/AutoClose'
 Bundle 'tpope/vim-surround'
-" Bundle 'Valloric/YouCompleteMe'
 Bundle 'Shougo/neocomplete.vim'
 " Bundle 'ervandew/supertab'
 
