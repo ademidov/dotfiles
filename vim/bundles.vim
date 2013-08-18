@@ -9,20 +9,21 @@ Bundle 'gmarik/vundle'
 
 " General
 Bundle 'tpope/vim-eunuch'
-" For :Subvert and coercions
-Bundle 'tpope/vim-abolish'
-" Tmux integration
-Bundle 'benmills/vimux'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
+" For :Subvert and coercions
+Bundle 'tpope/vim-abolish'
+" Tmux integration
+Bundle 'benmills/vimux'
+" For async neocomplete and ghcmod
+Bundle 'Shougo/vimproc.vim'
 
 " Navigation
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-" Bundle 'LustyJuggler'
 
 " Text editing
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -32,7 +33,6 @@ Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/AutoClose'
 Bundle 'tpope/vim-surround'
 Bundle 'Shougo/neocomplete.vim'
-" Bundle 'ervandew/supertab'
 
 " Text objects
 Bundle 'kana/vim-textobj-user'
@@ -49,55 +49,26 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-bundler'
 
 " Haskell
-Bundle 'Shougo/vimproc.vim'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'dag/vim2hs'
 Bundle 'ujihisa/neco-ghc'
-" Bundle 'haskell.vim'
 
-" Other languages
+" Erlang
 Bundle 'jimenezrick/vimerl'
+
+" Other languages (HL mostly)
+Bundle 'zaiste/tmux.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
-" HL for tmux config
-Bundle 'zaiste/tmux.vim'
 Bundle 'elzr/vim-json'
 
 " UI
 Bundle 'w0ng/vim-hybrid'
 
 " Unused {{{
-" Bundle 'DrawIt'
-" Bundle 'vim-scripts/CSApprox'
-" Bundle 'twilight'
-
-" Great plugin, but i dont use it. Maybe later
-" Bundle 'Lokaltog/vim-easymotion'
-
-" '3 of 15 results' for search ('/') - problems with \ mappings
-" Bundle 'IndexedSearch'
-
-" Tab completion inside search ('/'). Breaks history
-" Bundle 'vim-scripts/SearchComplete'
-
-" Dont like yet another vert column
-" Bundle 'airblade/vim-gitgutter'
-
-" Some tests with autoclose plugins:
-" Bundle 'Townk/vim-autoclose'
-" Bundle 'Raimondi/delimitMate'
-" Bundle 'kana/vim-smartinput'
-
-" Too noisy
-" Bundle 'vim-scripts/AutoComplPop'
-
-" Bundle 'scrooloose/syntastic'
-" Bundle 'int3/vim-extradite'
-
-" Bundle 'kien/rainbow_parentheses.vim'
-
-" Bundle 'kana/vim-smartchr'
+  " Bundle 'kien/rainbow_parentheses.vim'
+  " Bundle 'kana/vim-smartchr'
 " }}}
 
 filetype plugin indent on " required!
