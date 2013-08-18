@@ -199,6 +199,7 @@ runtime macros/matchit.vim
   nmap <leader>gs :Gstatus<CR>
   nmap <leader>gl :Glog<CR>
   nmap <leader>gd :Gdiff<CR>
+  nmap <leader>gw :Gwrite<CR>
 
   " Toggle nerdtree
   nmap <silent> <leader>p :NERDTreeToggle<CR>
