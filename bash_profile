@@ -16,6 +16,7 @@ fi
 # fi
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s $HOME/.git-completion.bash ]] && source $HOME/.git-completion.bash
+[[ -s `brew --prefix`/etc/profile.d/z.sh ]] && source `brew --prefix`/etc/profile.d/z.sh
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -41,6 +42,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
+fi
 
 if [ "$TERM" = "xterm" ] ; then
     if [ -z "$COLORTERM" ] ; then
