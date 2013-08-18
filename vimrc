@@ -328,6 +328,11 @@ runtime macros/matchit.vim
   noremap   <Left>   <NOP>
   noremap   <Right>  <NOP>
 
+  inoremap  <Esc>     <NOP>
+  vnoremap  <Esc>     <NOP>
+  " cnoremap  <Esc>     <NOP>
+  nnoremap  <Esc>     <NOP>
+
 " Section: Autocommands {{{1
 
   augroup RestorePosition " {{{
