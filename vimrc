@@ -160,7 +160,7 @@ runtime macros/matchit.vim
 " Section: Commands {{{1
 
   " Google search
-  command! -narg=1 Google :silent call system('xdg-open https://google.com/search?q='.<q-args>.'&')
+  command! -nargs=1 Google :silent call system('open https://google.com/search?q='.<q-args>.'&')
 
   " Convert Ruby 1.8 hash syntax to Ruby 1.9 syntax
   " based on https://github.com/henrik/dotfiles/blob/master/vim/config/commands.vim#L20
