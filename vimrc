@@ -21,7 +21,8 @@ runtime macros/matchit.vim
   " set complete-=i       " comletion from included may be slow
 
   set ttimeout
-  set ttimeoutlen=10    " fast escape
+  set ttimeoutlen=10 " fast escape
+  set lazyredraw     " don't redraw while macro executing
 
   " More faster scrolling: http://vim.wikia.com/wiki/Fix_syntax_highlighting
   syntax sync minlines=256
