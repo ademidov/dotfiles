@@ -155,6 +155,9 @@ runtime macros/matchit.vim
   " vimerl {{{2
     let erlang_folding = 1
 
+  " vim2hs {{{2
+    let g:haskell_conceal = 0
+
 " Section: Commands {{{1
 
   " Google search
