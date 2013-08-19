@@ -157,6 +157,10 @@ runtime macros/matchit.vim
   " vim2hs {{{2
     let g:haskell_conceal = 0
 
+  " neco-ghc {{{2
+    " Show detailed information (type) about symbols
+    let g:necoghc_enable_detailed_browse = 1
+
   " gitv {{{2
     let g:Gitv_DoNotMapCtrlKey = 1
 
