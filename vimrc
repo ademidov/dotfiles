@@ -147,6 +147,7 @@ runtime macros/matchit.vim
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
     let g:neocomplete#enable_prefetch = 1
+    let g:neocomplete#use_vimproc = 1
 
   " vim-eunuch {{{2
     " :rename abbr for :Rename :)
