@@ -97,9 +97,10 @@ runtime macros/matchit.vim
     set noswapfile    " no swap files (eg. .myfile.txt.swp)
   "}}}
   " Folding {{{
-    set nofoldenable
+    set foldenable
     set foldcolumn=0      " no folding columns
     set foldmethod=indent
+    set foldlevel=99      " all folds are open
   "}}}
 
 " Section: Plugins options {{{1
