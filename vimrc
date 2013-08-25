@@ -290,12 +290,6 @@ runtime macros/matchit.vim
   noremap H ^
   noremap L $
 
-  " windows movements
-  map <C-j> <C-W>j
-  map <C-k> <C-W>k
-  map <C-h> <C-W>h
-  map <C-l> <C-W>l
-
   " Experimental
   noremap ;; ;
   map ; :

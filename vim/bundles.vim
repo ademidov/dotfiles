@@ -18,6 +18,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-abolish'
 " Tmux integration
 Bundle 'benmills/vimux'
+Bundle 'christoomey/vim-tmux-navigator'
 " For async neocomplete and ghcmod
 Bundle 'Shougo/vimproc.vim'
 
