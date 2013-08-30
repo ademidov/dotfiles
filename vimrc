@@ -163,6 +163,39 @@ runtime macros/matchit.vim
     " Show detailed information (type) about symbols
     let g:necoghc_enable_detailed_browse = 1
 
+  " tagbar {{{2
+    let g:tagbar_compact = 1 " Omit help and empty lines
+
+    if executable('lushtags')
+        let g:tagbar_type_haskell = {
+            \ 'ctagsbin' : 'lushtags',
+            \ 'ctagsargs' : '--ignore-parse-error --',
+            \ 'kinds' : [
+                \ 'm:module:0',
+                \ 'e:exports:1',
+                \ 'i:imports:1',
+                \ 't:declarations:0',
+                \ 'd:declarations:1',
+                \ 'n:declarations:1',
+                \ 'f:functions:0',
+                \ 'c:constructors:0'
+            \ ],
+            \ 'sro' : '.',
+            \ 'kind2scope' : {
+                \ 'd' : 'data',
+                \ 'n' : 'newtype',
+                \ 'c' : 'constructor',
+                \ 't' : 'type'
+            \ },
+            \ 'scope2kind' : {
+                \ 'data' : 'd',
+                \ 'newtype' : 'n',
+                \ 'constructor' : 'c',
+                \ 'type' : 't'
+            \ }
+        \ }
+      endif
+
   " gitv {{{2
     let g:Gitv_DoNotMapCtrlKey = 1
 
@@ -281,6 +314,8 @@ runtime macros/matchit.vim
 
   " Paste toggle
   set pastetoggle=<F5>
+
+  nnoremap <silent> <F8> :TagbarToggle<CR>
 
   " Scroll viewport by 3 lines
   nnoremap <C-e> 3<C-e>

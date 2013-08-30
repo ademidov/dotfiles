@@ -26,6 +26,7 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
 
 " Text editing
 Bundle 'AndrewRadev/splitjoin.vim'
