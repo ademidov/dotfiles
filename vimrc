@@ -335,8 +335,9 @@ runtime macros/matchit.vim
   nmap <buffer> <F7> <Plug>(xmpfilter-run)
   xmap <buffer> <F7> <Plug>(xmpfilter-run)
 
-  " C-space for switch keyboard layout
-  imap <C-@> <C-^>
+  " C-f for switch keyboard layout
+  inoremap <C-f> <C-^>
+  cnoremap <C-f> <C-^>
 
   " Tab for scrolling completions
   inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<tab>"
