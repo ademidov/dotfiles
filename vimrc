@@ -130,9 +130,6 @@ runtime macros/matchit.vim
     let g:VimuxHeight = '30'
     let g:VimuxOrientation = 'v'
 
-  " vim-turbux {{{2
-    let g:turbux_command_rspec = 'spin push'
-
   " AutoClose {{{2
     let g:AutoCloseExpandEnterOn = ""
     let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
