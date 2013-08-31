@@ -1,6 +1,7 @@
 :set prompt "\ESC[32mλ> \ESC[m"
 :set editor vim
 
-:def hoogle \x -> return $ ":!hoogle --color --count 15 \"" ++ x ++ "\""
-:def doc \x -> return $ ":!hoogle --info --color \"" ++ x ++ "\""
-:def pf \s -> return $ ":! pointfree \"" ++ s ++ "\""
+let escapeShellArg arg = "\"" ++ arg ++ "\""
+:def hoogle return . (":!hoogle --color --count 15 " ++) . escapeShellArg
+:def doc return . (":!hoogle --info --color " ++) . escapeShellArg
+:def pf return . (":!pointfree --verbose " ++) . escapeShellArg
