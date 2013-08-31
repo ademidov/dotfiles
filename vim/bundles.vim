@@ -21,6 +21,8 @@ Bundle 'benmills/vimux'
 Bundle 'christoomey/vim-tmux-navigator'
 " For async neocomplete and ghcmod
 Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'honza/vim-snippets'
 
 " Navigation
 Bundle 'mileszs/ack.vim'
