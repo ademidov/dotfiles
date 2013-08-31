@@ -353,6 +353,7 @@ runtime macros/matchit.vim
   " Filetype switching
   nnoremap _rb = :set filetype=ruby<CR>
   nnoremap _jn = :set filetype=json<CR>
+  nnoremap _hs = :set filetype=haskell<CR>
 
   " :)
   inoremap  <Up>     <NOP>
