@@ -355,6 +355,13 @@ runtime macros/matchit.vim
   nnoremap _jn = :set filetype=json<CR>
   nnoremap _hs = :set filetype=haskell<CR>
 
+  " Break line
+  nnoremap S i<cr><esc>
+
+  " Ignore linewraps on jk
+  nnoremap j gj
+  nnoremap k gk
+
   " :)
   inoremap  <Up>     <NOP>
   inoremap  <Down>   <NOP>
@@ -364,11 +371,6 @@ runtime macros/matchit.vim
   noremap   <Down>   <NOP>
   noremap   <Left>   <NOP>
   noremap   <Right>  <NOP>
-
-  inoremap  <Esc>     <NOP>
-  vnoremap  <Esc>     <NOP>
-  " cnoremap  <Esc>     <NOP>
-  nnoremap  <Esc>     <NOP>
 
 " Section: Autocommands {{{1
 
