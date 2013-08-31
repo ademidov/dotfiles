@@ -32,11 +32,9 @@
   # rebase
   rc = rebase --continue
   rs = rebase --skip
-  rebase-origin = !git fetch origin && git rebase origin/master
 
   # reset
   unstage = reset HEAD
-  uncommit = reset --soft HEAD^
 
   # push
   pc        = !git brname | xargs git push origin
@@ -51,8 +49,6 @@
   # List of aliases
   aliases   = !git config -l | grep alias | cut -c 7-
 
-  # Copy&paste helper
-  git = !git
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
 
   root = rev-parse --show-toplevel
