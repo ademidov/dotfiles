@@ -111,8 +111,13 @@ runtime macros/matchit.vim
     " let g:ctrlp_cmd = 'CtrlPMixed' " MRU+buffers+files
     let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_mruf_relative = 1 " Show mru files only in the working directory
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
     let g:ctrlp_use_caching = 0
+
+    if executable('ag')
+      let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    else
+      let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+    endif
 
   " vim-surround {{{2
     let g:surround_{char2nr('#')} = "#{\r}" " ysiw# to wrap word under cursow with #{}
