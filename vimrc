@@ -348,9 +348,6 @@ runtime macros/matchit.vim
   inoremap <C-f> <C-^>
   cnoremap <C-f> <C-^>
 
-  " Tab for scrolling completions
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<tab>"
-
   " Scroll command-line history with C-k & C-j
   cnoremap <C-j> <t_kd>
   cnoremap <C-k> <t_ku>
@@ -375,6 +372,20 @@ runtime macros/matchit.vim
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
   smap <C-k>     <Plug>(neosnippet_expand_or_jump)
   xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+  " Disable noisy help
+  nmap <F1> <NOP>
+
+  " Smart tab completion "{{{
+    function! s:check_back_space()
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<tab>" :
+            \ neocomplete#start_manual_complete()
+  "}}}
 
   " :)
   inoremap  <Up>     <NOP>
