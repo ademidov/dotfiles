@@ -21,8 +21,6 @@ Bundle 'benmills/vimux'
 Bundle 'christoomey/vim-tmux-navigator'
 " For async neocomplete and ghcmod
 Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/neosnippet.vim'
-Bundle 'honza/vim-snippets'
 
 " Navigation
 Bundle 'mileszs/ack.vim'
@@ -38,6 +36,8 @@ Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/AutoClose'
 Bundle 'tpope/vim-surround'
 Bundle 'Shougo/neocomplete.vim'
+Bundle 'Shougo/neosnippet.vim'
+Bundle 'honza/vim-snippets'
 
 " Text objects
 Bundle 'kana/vim-textobj-user'
