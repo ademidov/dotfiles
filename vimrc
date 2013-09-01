@@ -268,6 +268,8 @@ runtime macros/matchit.vim
 
   " Toggle nerdtree
   nmap <silent> <leader>p :NERDTreeToggle<CR>
+  " Find current file in tree
+  nmap <silent> <leader>P :NERDTreeFind<CR>
 
   " Buffer search
   nmap <silent> <leader>b :CtrlPBuffer<CR>
