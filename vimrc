@@ -401,6 +401,10 @@ runtime macros/matchit.vim
             \ neocomplete#start_manual_complete()
   "}}}
 
+  " Use Tab instead of % to switch using matchit
+  nmap <tab> %
+  vmap <tab> %
+
   " :)
   inoremap  <Up>     <NOP>
   inoremap  <Down>   <NOP>
