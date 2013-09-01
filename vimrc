@@ -374,6 +374,8 @@ runtime macros/matchit.vim
   " Ignore linewraps on jk
   nnoremap j gj
   nnoremap k gk
+  vnoremap j gj
+  vnoremap k gk
 
   " C-k to select-and-expand snipper from neocomplete popup
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)
