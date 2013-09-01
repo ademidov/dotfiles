@@ -208,6 +208,13 @@ runtime macros/matchit.vim
     " Tell Neosnippet about the other snippets
     let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
+  " Splitjoin {{{2
+    " Remove extra whitespace
+    let g:splitjoin_normalize_whitespace = 1
+
+    " Tabular required
+    let g:splitjoin_align = 1
+
 " Section: Commands {{{1
 
   " Google search
