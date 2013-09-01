@@ -166,7 +166,10 @@ runtime macros/matchit.vim
     let g:necoghc_enable_detailed_browse = 1
 
   " tagbar {{{2
-    let g:tagbar_compact = 1 " Omit help and empty lines
+    let g:tagbar_compact = 1     " Omit help and empty lines
+    let g:tagbar_autoshowtag = 1 " Auto open closed folds
+    let g:tagbar_autofocus = 1   " Move focus to tagbar window on open
+    let g:tagbar_iconchars = ['▸', '▾']
 
     if executable('lushtags')
         let g:tagbar_type_haskell = {
