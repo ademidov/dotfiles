@@ -67,6 +67,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
+Bundle 'derekwyatt/vim-scala'
 
 " UI
 Bundle 'w0ng/vim-hybrid'
@@ -74,6 +75,14 @@ Bundle 'w0ng/vim-hybrid'
 " Unused {{{
   " Bundle 'kien/rainbow_parentheses.vim'
   " Bundle 'kana/vim-smartchr'
+  " Bundle 'sjl/vitality.vim'
+  " Bundle 'scrooloose/syntastic'
+
+  " Look at that!
+  " Bundle 'travitch/hasksyn'
+
+  " Bundle 'YankRing.vim'
+  " nnoremap <silent> <leader>y :YRShow<CR>
 " }}}
 
 filetype plugin indent on " required!

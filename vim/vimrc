@@ -134,6 +134,7 @@ runtime macros/matchit.vim
   " vimux {{{2
     let g:VimuxHeight = '30'
     let g:VimuxOrientation = 'v'
+    let g:VimuxPromptString = 'vimux: '
 
   " AutoClose {{{2
     let g:AutoCloseExpandEnterOn = ""
