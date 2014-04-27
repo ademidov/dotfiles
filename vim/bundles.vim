@@ -1,88 +1,97 @@
 " Initialize Vundle - https://github.com/gmarik/vundle {{{
   filetype off                       " required to initialize
-  set rtp+=$HOME/.vim/bundle/vundle/ " include vundle
-  call vundle#rc()                   " init vundle
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
 "}}}
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " General
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'gregsexton/gitv'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-unimpaired'
 " For :Subvert and coercions
-Bundle 'tpope/vim-abolish'
+Plugin 'tpope/vim-abolish'
 " Tmux integration
-Bundle 'benmills/vimux'
-Bundle 'christoomey/vim-tmux-navigator'
-" For async neocomplete and ghcmod
-Bundle 'Shougo/vimproc.vim'
+Plugin 'benmills/vimux'
+Plugin 'christoomey/vim-tmux-navigator'
+" For async ghcmod
+Plugin 'Shougo/vimproc.vim'
 
 " Navigation
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 
 " Text editing
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'ReplaceWithRegister'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-commentary'
-Bundle 'vim-scripts/AutoClose'
-Bundle 'tpope/vim-surround'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'Shougo/neosnippet.vim'
-Bundle 'honza/vim-snippets'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'ReplaceWithRegister'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-scripts/AutoClose'
+Plugin 'tpope/vim-surround'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'bkad/CamelCaseMotion'
 
 " Text objects
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'michaeljsmith/vim-indent-object'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'michaeljsmith/vim-indent-object'
 
 " Ruby & Rails
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'jgdavey/vim-turbux'
-Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-bundler'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'jgdavey/vim-turbux'
+Plugin 't9md/vim-ruby-xmpfilter'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-bundler'
 
 " Haskell
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'dag/vim2hs'
-Bundle 'ujihisa/neco-ghc'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'dag/vim2hs'
+Plugin 'ujihisa/neco-ghc'
 
 " Erlang
-Bundle 'jimenezrick/vimerl'
+Plugin 'jimenezrick/vimerl'
 
 " Other languages (HL mostly)
-Bundle 'zaiste/tmux.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'slim-template/vim-slim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'elzr/vim-json'
-Bundle 'derekwyatt/vim-scala'
+Plugin 'zaiste/tmux.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'slim-template/vim-slim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'elzr/vim-json'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'idris-hackers/idris-vim'
+Plugin 'groenewege/vim-less'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " UI
-Bundle 'w0ng/vim-hybrid'
+Plugin 'w0ng/vim-hybrid'
+
 
 " Unused {{{
-  " Bundle 'kien/rainbow_parentheses.vim'
-  " Bundle 'kana/vim-smartchr'
-  " Bundle 'sjl/vitality.vim'
-  " Bundle 'scrooloose/syntastic'
+  " Plugin 'kien/rainbow_parentheses.vim'
+  " Plugin 'kana/vim-smartchr'
+  " Plugin 'sjl/vitality.vim'
+  " Plugin 'scrooloose/syntastic'
 
   " Look at that!
-  " Bundle 'travitch/hasksyn'
+  " Plugin 'travitch/hasksyn'
 
-  " Bundle 'YankRing.vim'
+  " Plugin 'YankRing.vim'
   " nnoremap <silent> <leader>y :YRShow<CR>
 " }}}
+
+call vundle#end()
 
 filetype plugin indent on " required!

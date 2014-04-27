@@ -24,6 +24,8 @@ runtime macros/matchit.vim
   set ttimeoutlen=10 " fast escape
   set lazyredraw     " don't redraw while macro executing
 
+  set formatoptions+=j " Delete comment character when joining lines
+
   " More faster scrolling: http://vim.wikia.com/wiki/Fix_syntax_highlighting
   syntax sync minlines=256
 
@@ -65,6 +67,7 @@ runtime macros/matchit.vim
     set expandtab                  " use spaces instead tabs
     set shiftwidth=2               " 2 spaces for indenting with >>
     set tabstop=2                  " 2 spaces for tab
+    set softtabstop=2              " 2 spaces for tab
     set shiftround
   "}}}
   " Command line completions {{{
@@ -146,12 +149,6 @@ runtime macros/matchit.vim
     let g:gundo_preview_statusline = "Gundo Preview"
     let g:gundo_tree_statusline = "Gundo Tree"
 
-  " neocomplete {{{2
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#enable_prefetch = 1
-    let g:neocomplete#use_vimproc = 1
-
   " vim-eunuch {{{2
     " :rename abbr for :Rename :)
     cabbrev rename <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Rename" : "rename"<CR>
@@ -205,19 +202,36 @@ runtime macros/matchit.vim
   " gitv {{{2
     let g:Gitv_DoNotMapCtrlKey = 1
 
-  " neosnippet {{{2
-    " Enable snipMate compatibility feature
-    let g:neosnippet#enable_snipmate_compatibility = 1
-
-    " Tell Neosnippet about the other snippets
-    let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-
   " Splitjoin {{{2
     " Remove extra whitespace
     let g:splitjoin_normalize_whitespace = 1
 
     " Tabular required
     let g:splitjoin_align = 1
+
+  " YouCompleteMe {{{2
+    let g:ycm_semantic_triggers = {
+      \ 'haskell' : ['.'],
+      \ 'ruby' : ['.', '::'],
+      \ 'erlang' : [':'],
+      \ 'javascript,vim,python,scala' : ['.'],
+      \ }
+
+    let g:ycm_collect_identifiers_from_comments_and_strings = 1
+    let g:ycm_complete_in_comments = 1
+    let g:ycm_filetype_specific_completion_to_disable = {}
+    let g:ycm_use_ultisnips_completer = 1
+    let g:ycm_key_list_select_completion = ['<C-n>']
+    let g:ycm_key_list_previous_completion = ['<C-p>']
+    let g:ycm_key_detailed_diagnostics = ''
+    let g:ycm_collect_identifiers_from_tags_files = 1
+    let g:ycm_seed_identifiers_with_syntax = 1
+
+  " UltiSnipts {{{2
+    let g:UltiSnipsEditSplit="vertical"
+
+  " vim-tmux-navigator {{{2
+    let g:tmux_navigator_no_mappings = 1
 
 " Section: Commands {{{1
 
@@ -259,13 +273,12 @@ runtime macros/matchit.vim
   " Save current buffer, trim spaces and exit
   map <leader>q <leader>w :q!<CR>
 
-  nmap <leader>gb :Gblame<CR>
-  nmap <leader>gs :Gstatus<CR>
-  nmap <leader>gl :Glog<CR>
-  nmap <leader>gd :Gdiff<CR>
-  nmap <leader>gw :Gwrite<CR>
-  nmap <leader>gv :Gitv --all<cr>
-  vmap <leader>gv :Gitv!<cr>
+  nnoremap <leader>gb :Gblame<CR>
+  nnoremap <leader>gs :Gstatus<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gw :Gwrite<CR>
+  nnoremap <leader>gv :Gitv! --all<cr>
+  vnoremap <leader>gv :Gitv! --all<cr>
 
   " Toggle nerdtree
   nmap <silent> <leader>p :NERDTreeToggle<CR>
@@ -316,7 +329,7 @@ runtime macros/matchit.vim
   nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
 
   " Toggle gundo
-  map <leader>u :GundoToggle<CR>
+  nnoremap <leader>u :GundoToggle<CR>
 
   " Markdown preview
   nnoremap <leader>m :!open -a Marked.app '%:p'<cr><cr>
@@ -324,6 +337,11 @@ runtime macros/matchit.vim
   " Insert new line
   map <leader>o o<ESC>
   map <leader>O O<ESC>
+
+  nnoremap <silent><leader>yf :let @+ = expand("%")<cr>
+
+  " Select last inserted/yanked text
+  nmap gV `[v`]
 
   " Intelligently close a window
   nnoremap <silent> Q :call utils#closeWindowOrKillBuffer()<CR>
@@ -347,10 +365,6 @@ runtime macros/matchit.vim
   noremap H ^
   noremap L $
 
-  " Experimental
-  noremap ;; ;
-  map ; :
-
   " ruby evalution
   nmap <buffer> <F6> <Plug>(xmpfilter-mark)
   xmap <buffer> <F6> <Plug>(xmpfilter-mark)
@@ -373,9 +387,10 @@ runtime macros/matchit.vim
   nnoremap _rb = :set filetype=ruby<CR>
   nnoremap _jn = :set filetype=json<CR>
   nnoremap _hs = :set filetype=haskell<CR>
+  nnoremap _js = :set filetype=javascript<CR>
 
-  " Break line
-  nnoremap S i<cr><esc>
+  " Search file in current dir
+  nmap \ :CtrlP %%<CR>
 
   " Ignore linewraps on jk
   nnoremap j gj
@@ -383,28 +398,17 @@ runtime macros/matchit.vim
   vnoremap j gj
   vnoremap k gk
 
-  " C-k to select-and-expand snipper from neocomplete popup
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
-
   " Disable noisy help
   nmap <F1> <NOP>
-
-  " Smart tab completion "{{{
-    function! s:check_back_space()
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction
-
-    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<tab>" :
-            \ neocomplete#start_manual_complete()
-  "}}}
 
   " Use Tab instead of % to switch using matchit
   nmap <tab> %
   vmap <tab> %
+
+  nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+  nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+  nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+  nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
   " :)
   inoremap  <Up>     <NOP>
@@ -428,18 +432,21 @@ runtime macros/matchit.vim
   augroup FtOptions "{{{
     autocmd!
 
-    autocmd Filetype gitcommit setlocal spell textwidth=72
+    autocmd Filetype gitcommit setlocal textwidth=72
     autocmd Filetype git,gitcommit setlocal foldenable foldmethod=syntax
 
     autocmd FileType vim setlocal keywordprg=:help foldenable foldmethod=marker foldlevel=0
 
-    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc keywordprg=hoogle\ --info\ --color
+    autocmd BufWritePost *.hs GhcModCheckAndLintAsync
   augroup END "}}}
   augroup Stuff "{{{
     autocmd!
 
     " Resize splits when the window is resized
     autocmd VimResized * :wincmd =
+
+    autocmd BufWritePost vimrc source %
+    autocmd BufWritePost bundles.vim source %
   augroup END "}}}
 
 " Section: UI {{{1
