@@ -55,7 +55,6 @@ runtime macros/matchit.vim
     set norelativenumber " relative numbers not so awesome
   "}}}
   " Search and replace {{{
-    set hlsearch   " highlight search
     set incsearch  " show search matches while typing
     set ignorecase " case insensitive search
     set smartcase  " case sensitive when capitals present
