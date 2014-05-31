@@ -20,6 +20,8 @@ runtime macros/matchit.vim
   set clipboard=unnamed " OS X clipboard integration
   " set complete-=i       " comletion from included may be slow
 
+  set nrformats-=octal  " do not use C-A C-X on octals
+
   set ttimeout
   set ttimeoutlen=10 " fast escape
   set lazyredraw     " don't redraw while macro executing
@@ -76,12 +78,23 @@ runtime macros/matchit.vim
     set wildignore=git,*.swp,*.jpg,*.png,*.gif " ignore versioning and binary files at autocomplete
   "}}}
   " Status line {{{
-    set statusline=%<%f                           " path
-    set statusline+=%m%r%h%w                      " flags
-    set statusline+=%=%-14.(%l\/%L,%c%V%)         " line and char numbers
-    set statusline+=%=%y                          " type
-    set statusline+=[%{strlen(&fenc)?&fenc:&enc}] " encoding
-    set statusline+=[git:%{fugitive#head()}]      " git branch
+
+    fun! StatusLineFilePath() "{{{
+      let p = expand('%')
+      if len(p) > 30
+        let p = pathshorten(p)
+      endif
+      return p
+    endfunction "}}}
+
+    set statusline=
+    set statusline+=\ %<%{StatusLineFilePath()} " path
+    set statusline+=%m%r%h%w                    " flags
+    set statusline+=%=                          " switch to right side
+    set statusline+=%y\                         " type
+    set statusline+=%-10((%l,%c)%)\             " line and column
+    set statusline+=%3P                         " percentage of file
+    " set statusline+=[%{fugitive#head()}]          " git branch
   "}}}
   " Persistent undo {{{
     silent !mkdir $HOME/.vim/undo > /dev/null 2>&1
@@ -163,6 +176,9 @@ runtime macros/matchit.vim
     " Show detailed information (type) about symbols
     let g:necoghc_enable_detailed_browse = 1
 
+  " ghc-mod {{{2
+    let g:ghcmod_ghc_options = ['-fno-warn-unused-do-bind']
+
   " tagbar {{{2
     let g:tagbar_compact = 1     " Omit help and empty lines
     let g:tagbar_autoshowtag = 1 " Auto open closed folds
@@ -229,6 +245,7 @@ runtime macros/matchit.vim
 
   " UltiSnipts {{{2
     let g:UltiSnipsEditSplit="vertical"
+    let g:UltiSnipsExpandTrigger="<C-j>"
 
   " vim-tmux-navigator {{{2
     let g:tmux_navigator_no_mappings = 1
@@ -308,16 +325,16 @@ runtime macros/matchit.vim
   " [c]ommand
   nmap <leader>vc :VimuxPromptCommand<CR>
 
-  " CtrlP jump to
-  map <leader>jm :CtrlP app/models<CR>
-  map <leader>jc :CtrlP app/controllers<CR>
-  map <leader>jv :CtrlP app/views<CR>
-  map <leader>jh :CtrlP app/helpers<CR>
-  map <leader>jl :CtrlP lib<CR>
-  map <leader>js :CtrlP spec<CR>
-  map <leader>jf :CtrlP spec/factories<CR>
-  map <leader>jd :CtrlP db<CR>
-  map <leader>jC :CtrlP config<CR>
+  " " CtrlP jump to
+  " map <leader>jm :CtrlP app/models<CR>
+  " map <leader>jc :CtrlP app/controllers<CR>
+  " map <leader>jv :CtrlP app/views<CR>
+  " map <leader>jh :CtrlP app/helpers<CR>
+  " map <leader>jl :CtrlP lib<CR>
+  " map <leader>js :CtrlP spec<CR>
+  " map <leader>jf :CtrlP spec/factories<CR>
+  " map <leader>jd :CtrlP db<CR>
+  " map <leader>jC :CtrlP config<CR>
 
   " Switch between last two buffers
   nnoremap <leader><leader> <c-^>
@@ -380,9 +397,10 @@ runtime macros/matchit.vim
   inoremap <C-f> <C-^>
   cnoremap <C-f> <C-^>
 
-  " Scroll command-line history with C-k & C-j
-  cnoremap <C-j> <t_kd>
-  cnoremap <C-k> <t_ku>
+  " Use the text that has already been typed as the prefix for searching
+  " through commands
+  cnoremap <C-n> <t_kd>
+  cnoremap <C-p> <t_ku>
 
   " C-a & C-e should work as expected at command-line mode
   cnoremap <C-a> <Home>
@@ -392,7 +410,7 @@ runtime macros/matchit.vim
   nnoremap _rb = :set filetype=ruby<CR>
   nnoremap _jn = :set filetype=json<CR>
   nnoremap _hs = :set filetype=haskell<CR>
-  nnoremap _js = :set filetype=javascript<CR>
+  nnoremap _sh = :set filetype=sh<CR>
 
   " Search file in current dir
   nmap \ :CtrlP %%<CR>
@@ -402,9 +420,6 @@ runtime macros/matchit.vim
   nnoremap k gk
   vnoremap j gj
   vnoremap k gk
-
-  " Disable noisy help
-  nmap <F1> <NOP>
 
   " Use Tab instead of % to switch using matchit
   nmap <tab> %
@@ -463,9 +478,6 @@ runtime macros/matchit.vim
 
     " Resize splits when the window is resized
     autocmd VimResized * :wincmd =
-
-    autocmd BufWritePost vimrc source %
-    autocmd BufWritePost bundles.vim source %
   augroup END "}}}
 
 " Section: UI {{{1
