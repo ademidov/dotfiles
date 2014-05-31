@@ -2,7 +2,7 @@ set nocompatible    " we are in 2013
 let mapleader = ' '
 
 " Load plugins
-source $HOME/.vim/bundles.vim
+source $HOME/.vim/plugins.vim
 
 runtime macros/matchit.vim
 
