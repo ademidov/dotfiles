@@ -9,11 +9,11 @@
 Plugin 'gmarik/Vundle.vim'
 
 " General
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
 Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 " For :Subvert and coercions
 Plugin 'tpope/vim-abolish'
@@ -30,16 +30,17 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 
 " Text editing
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'ReplaceWithRegister'
 Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-commentary'
 Plugin 'vim-scripts/AutoClose'
-Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bkad/CamelCaseMotion'
+Plugin 'Lokaltog/vim-easymotion'
 
 " Text objects
 Plugin 'kana/vim-textobj-user'
@@ -80,16 +81,8 @@ Plugin 'w0ng/vim-hybrid'
 
 
 " Unused {{{
-  " Plugin 'kien/rainbow_parentheses.vim'
-  " Plugin 'kana/vim-smartchr'
-  " Plugin 'sjl/vitality.vim'
-  " Plugin 'scrooloose/syntastic'
-
   " Look at that!
   " Plugin 'travitch/hasksyn'
-
-  " Plugin 'YankRing.vim'
-  " nnoremap <silent> <leader>y :YRShow<CR>
 " }}}
 
 call vundle#end()

@@ -233,6 +233,11 @@ runtime macros/matchit.vim
   " vim-tmux-navigator {{{2
     let g:tmux_navigator_no_mappings = 1
 
+  " easymotion {{{2
+    let g:EasyMotion_do_mapping = 0
+    let g:EasyMotion_smartcase = 1
+    let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
 " Section: Commands {{{1
 
   " Google search
@@ -404,6 +409,20 @@ runtime macros/matchit.vim
   " Use Tab instead of % to switch using matchit
   nmap <tab> %
   vmap <tab> %
+
+  " Easymotion mappings
+  nmap s <Plug>(easymotion-s2)
+  vmap s <Plug>(easymotion-s2)
+  omap gs <Plug>(easymotion-s2)
+  map <Leader>j <Plug>(easymotion-j)
+  map <Leader>k <Plug>(easymotion-k)
+
+  omap t <Plug>(easymotion-tl)
+  omap f <Plug>(easymotion-fl)
+
+  omap T <Plug>(easymotion-Tl)
+  omap F <Plug>(easymotion-Fl)
+
 
   nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
   nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
