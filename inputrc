@@ -14,8 +14,11 @@ set mark-symlinked-directories on
 
 # Use the text that has already been typed as the prefix for searching through
 # commands (i.e. more intelligent Up/Down behavior)
-"\e[B": history-search-forward
 "\e[A": history-search-backward
+"\e[B": history-search-forward
+# Same for ^P and ^N
+"\C-p": history-search-backward
+"\C-n": history-search-forward
 
 # Auto append completions
 TAB: menu-complete
