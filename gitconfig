@@ -21,6 +21,7 @@
 
   # log
   lg = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%ad%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+  lb = for-each-ref --sort=-committerdate --format='%(authordate:relative) %(refname:short)' refs/heads
   l = !git lg -n 20
 
   # checkout
