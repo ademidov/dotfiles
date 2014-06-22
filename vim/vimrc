@@ -367,9 +367,6 @@ runtime macros/matchit.vim
   " Intelligently close a window
   nnoremap <silent> Q :call utils#closeWindowOrKillBuffer()<CR>
 
-  " Toggle relative and absolute line numbers
-  nnoremap <C-n> :set relativenumber!<CR>
-
   " Yank from cursor to end of line
   nnoremap Y y$
 
