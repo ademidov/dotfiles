@@ -158,11 +158,8 @@ runtime macros/matchit.vim
     let g:AutoCloseExpandEnterOn = ""
     let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
-  " Gundo {{{2
-    let g:gundo_help = 0 " hide help in graph window
-    let g:gundo_close_on_revert = 1
-    let g:gundo_preview_statusline = "Gundo Preview"
-    let g:gundo_tree_statusline = "Gundo Tree"
+  " UndoTree {{{2
+    let g:undotree_SetFocusWhenToggle = 1
 
   " vim-eunuch {{{2
     " :rename abbr for :Rename :)
@@ -352,8 +349,8 @@ runtime macros/matchit.vim
   " Search for word under cursor
   nnoremap <leader>F *<C-O>:AckFromSearch!<cr>
 
-  " Toggle gundo
-  nnoremap <leader>u :GundoToggle<CR>
+  " Toggle undotree
+  nnoremap <silent><leader>u :UndotreeToggle<CR>
 
   " Markdown preview
   nnoremap <leader>m :!open -a Marked.app '%:p'<cr><cr>
