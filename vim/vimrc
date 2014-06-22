@@ -28,6 +28,8 @@ runtime macros/matchit.vim
 
   set formatoptions+=j " Delete comment character when joining lines
 
+  set diffopt=filler,vertical
+
   " More faster scrolling: http://vim.wikia.com/wiki/Fix_syntax_highlighting
   syntax sync minlines=256
 
@@ -55,6 +57,7 @@ runtime macros/matchit.vim
     set norelativenumber " relative numbers not so awesome
   "}}}
   " Search and replace {{{
+    set hlsearch   " highlight search
     set incsearch  " show search matches while typing
     set ignorecase " case insensitive search
     set smartcase  " case sensitive when capitals present
