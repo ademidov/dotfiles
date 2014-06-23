@@ -271,20 +271,6 @@ runtime macros/matchit.vim
   " Search and replace word under cursor
   nmap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
-  " Rails.vim alternate and related
-  nmap <leader>ra :A<CR>
-  nmap <leader>rr :R<CR>
-  " Same in vsplit
-  nmap <leader>RA :AV<CR>
-  nmap <leader>RR :RV<CR>
-
-  " Prompt for jump to migration (then <cr> for last migration, 0<cr> for seeds)
-  nmap <leader>rm :Rmigration<space>
-  " Prompt for rails generate
-  nmap <leader>rg :Rgenerate<space>
-  " Prompt for rails extract (partial, concern, helper)
-  map <leader>re :Rextract<space>
-
   " Highlight current word without moving the cursor
   nmap <silent> <leader>h :setl hls<CR>:let @/="\\<<C-r><C-w>\\>"<CR>
 
@@ -355,10 +341,6 @@ runtime macros/matchit.vim
   " Markdown preview
   nnoremap <leader>m :!open -a Marked.app '%:p'<cr><cr>
 
-  " Insert new line
-  map <leader>o o<ESC>
-  map <leader>O O<ESC>
-
   nnoremap <silent><leader>yf :let @+ = expand("%")<cr>
 
   " Select last inserted/yanked text
@@ -374,10 +356,6 @@ runtime macros/matchit.vim
   set pastetoggle=<F5>
 
   nnoremap <silent> <F8> :TagbarToggle<CR>
-
-  " Scroll viewport by 3 lines
-  nnoremap <C-e> 3<C-e>
-  nnoremap <C-y> 3<C-y>
 
   " H to start of line, L to end of line
   noremap H ^
@@ -439,16 +417,6 @@ runtime macros/matchit.vim
   nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
   nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
   nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-
-  " :)
-  inoremap  <Up>     <NOP>
-  inoremap  <Down>   <NOP>
-  inoremap  <Left>   <NOP>
-  inoremap  <Right>  <NOP>
-  noremap   <Up>     <NOP>
-  noremap   <Down>   <NOP>
-  noremap   <Left>   <NOP>
-  noremap   <Right>  <NOP>
 
 " Section: Autocommands {{{1
 
