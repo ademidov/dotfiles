@@ -1,5 +1,9 @@
+# Navigation
+alias -- -="cd -"
+
 # Unix
-alias ll='ls -lah'
+alias ll='ls -lahF'
+alias l='ls -F'
 alias ln='ln -v'
 alias mkdir='mkdir -p'
 # alias pbcopy='xclip -selection clipboard'
@@ -31,3 +35,5 @@ alias sps='spin serve --push-results'
 alias spp='spin push'
 
 alias evrone='$HOME/scripts/evrone-shell.sh'
+
+alias sml='rlwrap sml'

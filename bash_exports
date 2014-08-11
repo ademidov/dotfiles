@@ -1,5 +1,4 @@
 export EDITOR="vim"
-# export TERM="gnome-256color"
 export XDG_CONFIG_HOME="/home/aleksey/.config";
 
 # Larger bash history
