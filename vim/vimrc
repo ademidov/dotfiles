@@ -2,7 +2,85 @@ set nocompatible    " we are in 2013
 let mapleader = ' '
 
 " Load plugins
-source $HOME/.vim/plugins.vim
+call plug#begin('~/.vim/bundle')
+
+" General
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv', { 'on': 'Gitv' }
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'tpope/vim-unimpaired'
+" For :Subvert and coercions
+Plug 'tpope/vim-abolish', { 'on': 'S' }
+" Tmux integration
+Plug 'benmills/vimux', { 'for': 'ruby' }
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-dispatch'
+" For async ghcmod
+Plug 'Shougo/vimproc.vim', { 'for': 'haskell' }
+
+" Navigation
+Plug 'mileszs/ack.vim', { 'on': ['Ack', 'AckFromSearch'] }
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+
+" Text editing
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'ReplaceWithRegister'
+Plug 'godlygeek/tabular'
+Plug 'vim-scripts/AutoClose'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe'
+Plug 'bkad/CamelCaseMotion'
+Plug 'Lokaltog/vim-easymotion'
+" For vim-oblique:
+Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-oblique'
+
+" Text objects
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'michaeljsmith/vim-indent-object'
+
+" Ruby & Rails
+Plug 'vim-ruby/vim-ruby',       { 'for': 'ruby' }
+Plug 'tpope/vim-rails',         { 'for': 'ruby' }
+Plug 'tpope/vim-rake',          { 'for': 'ruby' }
+Plug 'jgdavey/vim-turbux',      { 'for': 'ruby' }
+Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
+Plug 'tpope/vim-endwise',       { 'for': 'ruby' }
+Plug 'tpope/vim-bundler',       { 'for': 'ruby' }
+
+" Haskell
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'dag/vim2hs',          { 'for': 'haskell' }
+Plug 'ujihisa/neco-ghc',    { 'for': 'haskell' }
+
+" Erlang
+Plug 'jimenezrick/vimerl', { 'for': 'erlang' }
+
+" Other languages (HL mostly)
+Plug 'zaiste/tmux.vim',          { 'for': 'tmux' }
+Plug 'tpope/vim-haml',           { 'for': 'haml' }
+Plug 'slim-template/vim-slim',   { 'for': 'slim' }
+Plug 'groenewege/vim-less',      { 'for': 'less' }
+Plug 'derekwyatt/vim-scala',     { 'for': 'scala' }
+Plug 'idris-hackers/idris-vim',  { 'for': 'idris' }
+Plug 'wting/rust.vim',           { 'for': 'rust' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'elzr/vim-json',            { 'for': 'json' }
+Plug 'pangloss/vim-javascript',  { 'for': 'javascript' }
+Plug 'mxw/vim-jsx',              { 'for': 'javascript' }
+
+" UI
+Plug 'w0ng/vim-hybrid'
+
+call plug#end()
 
 runtime macros/matchit.vim
 
@@ -145,9 +223,11 @@ runtime macros/matchit.vim
     let NERDTreeAutoDeleteBuffer = 1 " Delete opened buffer when file removed/renamed
     let NERDTreeQuitOnOpen = 1       " Close tree on file open
     let NERDChristmasTree = 1        " Be colorful
+    let NERDTreeHijackNetrw = 0
 
   " ack.vim {{{2
     let g:ackprg='ack -H --nocolor --nogroup --column --smart-case --sort-files'
+    let g:ack_use_dispatch = 1
 
   " vimux {{{2
     let g:VimuxHeight = '30'
@@ -160,10 +240,6 @@ runtime macros/matchit.vim
 
   " UndoTree {{{2
     let g:undotree_SetFocusWhenToggle = 1
-
-  " vim-eunuch {{{2
-    " :rename abbr for :Rename :)
-    cabbrev rename <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "Rename" : "rename"<CR>
 
   " vimerl {{{2
     let erlang_folding = 1
@@ -265,17 +341,13 @@ runtime macros/matchit.vim
 
 " Section: Mappings {{{1
 
-  " Temporarily disable highlighting
-  nmap <silent> <leader>n :nohlsearch<CR>
-
   " Search and replace word under cursor
   nmap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
-  " Highlight current word without moving the cursor
-  nmap <silent> <leader>h :setl hls<CR>:let @/="\\<<C-r><C-w>\\>"<CR>
-
   " Trim spaces and save current buffer
   map <silent> <leader>w :call utils#trimSpaces()<CR>:w!<CR>
+
+  nnoremap <leader>l :ls<CR>:b<space>
 
   " Save current buffer, trim spaces and exit
   map <leader>q <leader>w :q!<CR>
@@ -405,6 +477,8 @@ runtime macros/matchit.vim
   omap gs <Plug>(easymotion-s2)
   map <Leader>j <Plug>(easymotion-j)
   map <Leader>k <Plug>(easymotion-k)
+  omap <Leader>j <Plug>(easymotion-j)
+  omap <Leader>k <Plug>(easymotion-k)
 
   omap t <Plug>(easymotion-tl)
   omap f <Plug>(easymotion-fl)
