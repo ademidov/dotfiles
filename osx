@@ -21,6 +21,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Fast key-repeat
 defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -45,6 +46,7 @@ defaults write -g NSScrollAnimationEnabled -bool false
 # elastic scroll
 defaults write -g NSScrollViewRubberbanding -bool false
 
+# https://github.com/tekezo/Karabiner-Elements/issues/8
 # showing sheets, resizing preference windows, zooming windows
 defaults write -g NSWindowResizeTime -float 0.001
 

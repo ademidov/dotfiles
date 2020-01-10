@@ -9,4 +9,36 @@ zeus_plan.rb
 Session.vim
 .ackrc
 tags
+codex.tags
 .local/
+.rsync_cache/
+.rsync_cache
+.agignore
+.rspec-local
+/bundle/
+
+# Scala stuff
+*.class
+*.log
+
+# Scala-IDE
+.scala_dependencies
+
+.rake_tasks~
+ansible/
+
+.pryrc
+
+.byebug_history
+
+Dockerfile.local
+
+# Local db dumps
+dumps
+
+.projections.json
+
+.envrc
+.editorconfig
+
+playground/

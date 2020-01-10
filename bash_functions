@@ -3,7 +3,7 @@ function mkd() {
 }
 
 function c() {
-  cd ~/projects/$1
+  cd $HOME/projects/$1
 }
 
 function _c() {
