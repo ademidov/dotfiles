@@ -37,3 +37,14 @@ alias spp='spin push'
 alias evrone='$HOME/scripts/evrone-shell.sh'
 
 alias sml='rlwrap sml'
+
+alias d='docker'
+alias dc='docker-compose'
+alias dce='docker-compose exec'
+
+alias dps='docker ps'
+alias dcps='docker-compose ps'
+
+alias vim-orig='vim'
+alias vim='nvim'
+alias vi='nvim'

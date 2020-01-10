@@ -18,11 +18,14 @@
   d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
   # staged
   dc = !"git d --cached"
+  # fancy
+  df = !"git d --color| diff-so-fancy"
 
   # log
-  lg = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%ad%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+  lg = log --graph --full-history --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%ad%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
   lb = for-each-ref --sort=-committerdate --format='%(authordate:relative) %(color:green)%(refname:short) %(color:reset)(%(authorname))' refs/heads
   l = !git lg -n 20
+  lgg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 
   # checkout
   co = checkout
@@ -54,6 +57,8 @@
 
   root = rev-parse --show-toplevel
   repo = "!f() { if [ -n \"$(git rev-parse --is-inside-work-tree 2> /dev/null)\" ] ; then echo $(basename $(git root)):$(git brname); else exit 1; fi; }; f"
+
+  untracked = ls-files --others --exclude-standard
 
 [core]
   editor = vim
