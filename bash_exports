@@ -2,20 +2,20 @@ export EDITOR="nvim"
 export XDG_CONFIG_HOME="/Users/ademidov/.config";
 
 # Larger bash history
-export HISTSIZE=1024
+export HISTSIZE=8192
 export HISTFILESIZE=$HISTSIZE
 # Don't put duplicate lines or lines starting with space in the history
 export HISTCONTROL=ignoreboth
 # Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd;exit:* --help"
+export HISTIGNORE="ls:cd:cd -:pwd;exit:"
 
-export PATH="/usr/local/sbin:$HOME/scripts:$HOME/.cabal/bin:$PATH"
+export GOPATH=$HOME/go
 
 # Ruby GC tuning
-export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_HEAP_FREE_MIN=500000
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl` --with-readline-dir=`brew --prefix readline` --with-gcc=clang"
+export PATH="$HOME/bin:$GOPATH/bin:$PATH"
