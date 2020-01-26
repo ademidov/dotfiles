@@ -28,5 +28,9 @@ fi
 
 BREW_PREFIX=`brew --prefix`
   [ -s $BREW_PREFIX/etc/profile.d/z.sh ] && source $BREW_PREFIX/etc/profile.d/z.sh
-  [ -f $BREW_PREFIX/share/bash-completion/bash_completion ] && source $BREW_PREFIX/share/bash-completion/bash_completion
+  [ -f $BREW_PREFIX/etc/profile.d/bash_completion.sh ] && source $BREW_PREFIX/etc/profile.d/bash_completion.sh
 unset BREW_PREFIX
+
+eval "$(direnv hook bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

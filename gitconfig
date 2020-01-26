@@ -61,7 +61,7 @@
   untracked = ls-files --others --exclude-standard
 
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore
 
 [init]

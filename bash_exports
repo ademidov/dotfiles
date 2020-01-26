@@ -1,5 +1,5 @@
-export EDITOR="vim"
-export XDG_CONFIG_HOME="/home/aleksey/.config";
+export EDITOR="nvim"
+export XDG_CONFIG_HOME="/Users/ademidov/.config";
 
 # Larger bash history
 export HISTSIZE=1024
