@@ -71,11 +71,13 @@
   tool = vimdiff
   # Show commits on merge
   log = true
+  conflictstyle = diff3
 
 [diff]
   # Use (i)ndex, (w)ork tree, (c)ommit and (o)bject
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
+  ignoreSubmodules = dirty
 
 [user]
   name = Aleksey Demidov
