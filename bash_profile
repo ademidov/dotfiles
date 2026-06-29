@@ -1,3 +1,8 @@
+BREW_PREFIX="/usr/local"
+  [ -s $BREW_PREFIX/etc/profile.d/z.sh ] && source $BREW_PREFIX/etc/profile.d/z.sh
+  [ -f $BREW_PREFIX/etc/profile.d/bash_completion.sh ] && source $BREW_PREFIX/etc/profile.d/bash_completion.sh
+unset BREW_PREFIX
+
 for file in ~/.bash_{exports,prompt,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
@@ -19,18 +24,13 @@ shopt -s globstar
 shopt -s autocd
 shopt -s cdspell
 
-# init rbenv
-if [[ -d $HOME/.rbenv ]]; then
-     export PATH="$HOME/.rbenv/bin:$PATH"
-     eval "$(rbenv init - --no-rehash)"
-     # (rbenv rehash &) 2> /dev/null
-fi
-
-BREW_PREFIX=`brew --prefix`
-  [ -s $BREW_PREFIX/etc/profile.d/z.sh ] && source $BREW_PREFIX/etc/profile.d/z.sh
-  [ -f $BREW_PREFIX/etc/profile.d/bash_completion.sh ] && source $BREW_PREFIX/etc/profile.d/bash_completion.sh
-unset BREW_PREFIX
-
 eval "$(direnv hook bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+# Bob (neovim)
+source "$HOME/.local/share/bob/env/env.sh"
