@@ -53,8 +53,6 @@
   # List of aliases
   aliases   = !git config -l | grep alias | cut -c 7-
 
-  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
-
   root = rev-parse --show-toplevel
   repo = "!f() { if [ -n \"$(git rev-parse --is-inside-work-tree 2> /dev/null)\" ] ; then echo $(basename $(git root)):$(git brname); else exit 1; fi; }; f"
 
@@ -63,9 +61,6 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignore
-
-[init]
-  templatedir = ~/.git_template
 
 [merge]
   tool = vimdiff
