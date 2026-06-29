@@ -41,7 +41,7 @@
   unstage = reset HEAD
 
   # push
-  pc        = !git brname | xargs git push origin
+  pc = push
 
   # merge
   unmerged  = !git ls-files --unmerged | cut -f2 | sort -u
@@ -90,7 +90,10 @@
   browser = open
 
 [push]
-  default = simple
+  autoSetupRemote = true
+
+[pull]
+	ff = only
 
 [color]
   diff   = true
@@ -118,5 +121,5 @@
 [help]
   autocorrect = 1
 
-[url "git@github.com:"]
-  insteadOf = gh:
+[commit]
+	gpgsign = true
